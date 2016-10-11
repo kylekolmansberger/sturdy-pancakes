@@ -8,6 +8,6 @@
  *
  * @author kck5178
  */
-public class test {
+public class MyJPanel {
     
 }
