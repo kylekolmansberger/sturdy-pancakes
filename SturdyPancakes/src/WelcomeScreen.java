@@ -14,11 +14,16 @@ import javax.swing.*;
  * @author fyl5079
  */
 public class WelcomeScreen extends JPanel{
+    private JButton clickToContinue;
     public WelcomeScreen(){
         super();
         
-        setLayout(null);
         setBackground(Color.blue);
+        setLayout(null);
+        
+        clickToContinue = new JButton("Click to Continue");
+        add(clickToContinue);
+        setVisible(true);
             
     }
     

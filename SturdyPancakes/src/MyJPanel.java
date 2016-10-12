@@ -20,6 +20,7 @@ public class MyJPanel extends JPanel {
         setLayout(null);
         
         WelcomeScreen welcome = new WelcomeScreen();
+        welcome.setBounds(0,0,500,500);
         add(welcome);
     }
     
