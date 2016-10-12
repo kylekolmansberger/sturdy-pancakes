@@ -19,10 +19,6 @@ public class MyJPanel extends JPanel {
         setBackground(Color.gray);
         setLayout(null);
         
-        
-        
-        
-        
     }
     
 }
