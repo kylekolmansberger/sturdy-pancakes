@@ -1,3 +1,7 @@
+
+import java.awt.Color;
+import javax.swing.*;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,6 +12,17 @@
  *
  * @author kck5178
  */
-public class MyJPanel {
+public class MyJPanel extends JPanel {
+    public MyJPanel()
+    {
+        super();
+        setBackground(Color.gray);
+        setLayout(null);
+        
+        
+        
+        
+        
+    }
     
 }

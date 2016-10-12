@@ -7,6 +7,18 @@ import javax.swing.*;
 
 public class MyJFrame extends JFrame 
 {
-    JFrame JFrame1 = new JFrame();
-    
+    public MyJFrame(String name)
+    {
+    super (name);
+        
+        MyJPanel initial = new MyJPanel();
+        add(initial);
+        
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(1280,750);
+        setResizable(false);
+        setVisible(true);   
+        
+        
+    }
 }
