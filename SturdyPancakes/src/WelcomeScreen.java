@@ -1,5 +1,6 @@
 
-import java.awt.Color;
+import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 /*
@@ -10,17 +11,15 @@ import javax.swing.*;
 
 /**
  *
- * @author kck5178
+ * @author fyl5079
  */
-public class MyJPanel extends JPanel {
-    public MyJPanel()
-    {
+public class WelcomeScreen extends JPanel{
+    public WelcomeScreen(){
         super();
-        setBackground(Color.gray);
-        setLayout(null);
         
-        WelcomeScreen welcome = new WelcomeScreen();
-        add(welcome);
+        setLayout(null);
+        setBackground(Color.blue);
+            
     }
     
 }
