@@ -1,6 +1,7 @@
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,17 +18,25 @@ public class Authenticator {
     Map users = new HashMap(); //userID, userPassword
     boolean authenticated = false;
     
-    public Authenticator(String id, String password) {
-        this.id = id;
-        this.password = password;
+    public Authenticator() {
+        
     }
     public void addTestUsers() {
         users.put("jsmith", "mypassword");
         users.put("teacher14", "schoolisgreat");
         users.put("pennstate12", "gopennstate");
     }
+    
+    public void getUserCredentials() {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter your ID: ");
+        id = in.next();
+        System.out.print("Enter your password: ");
+        password = in.next();
+    }
+    
     public void findMathcingPassword() {
-        matchingPassword = users.get(id).toString(); //returns password
+        matchingPassword = users.get(id).toString();
     }
     
     public boolean matchToPassword() {
