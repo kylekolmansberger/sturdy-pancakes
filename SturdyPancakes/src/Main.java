@@ -10,8 +10,14 @@ public class Main
         a.addTestUsers();
         a.getUserCredentials();
         a.findMathcingPassword();
-        a.matchToPassword();
-        MyJFrame initial = new MyJFrame("Sturdy Pancakes - Credential Manager");
+        if (a.matchToPassword() == true) {
+            MyJFrame initial = new MyJFrame("Sturdy Pancakes - Credential Manager");
+        }
+        else {
+            
+        }
+        
+        
 
     }
 }

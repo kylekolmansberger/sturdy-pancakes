@@ -33,10 +33,17 @@ public class Authenticator {
         id = in.next();
         System.out.print("Enter your password: ");
         password = in.next();
+        System.out.println();
     }
     
     public void findMathcingPassword() {
-        matchingPassword = users.get(id).toString();
+        if (users.containsKey(id)) {
+            matchingPassword = users.get(id).toString();
+        }
+        else {
+            System.out.println("Invalid ID");
+        }
+        
     }
     
     public boolean matchToPassword() {
