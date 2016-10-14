@@ -25,7 +25,7 @@ public class MainMenu implements Menu{
     }
 
     @Override
-    public void getUserSelection(String menuName) {
+    public void getUserSelection() {
         Scanner in = new Scanner(System.in);
         menuOption = in.nextInt();
         

@@ -11,7 +11,7 @@
 public abstract interface Menu {
     
 
-    public void getUserSelection(String menuName);
+    public void getUserSelection();
     
     public void runUserSelection();
 }
