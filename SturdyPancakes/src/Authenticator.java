@@ -18,7 +18,7 @@ public class Authenticator {
     
     public Authenticator() {
         login = new String();
-        users = new ArrayList<>(5);
+        users = new ArrayList<>();
         check =  false;
         users.add("Frank Liang password");
         users.add("Danny Khouri password");
@@ -31,6 +31,7 @@ public class Authenticator {
         for(int i = 0;i<users.size();i++){
             if(login.equals(users.get(i))){
                     check = true;
+                    break;
                 }
                 else{
                     check = false;
