@@ -13,23 +13,20 @@ import javax.swing.*;
  *
  * @author fyl5079
  */
-public class WelcomeScreen extends JPanel implements ActionListener{
+public class WelcomeScreen extends JPanel{
     private JButton clickToContinue;
     public WelcomeScreen(){
         super();
         setVisible(true);
-        setBackground(Color.blue);
+        setBackground(Color.white);
         setLayout(new BorderLayout());
-        clickToContinue = new JButton("Click to Continue");
-       
+        clickToContinue = new JButton("Welcome Screen, Click to Continue");
+        clickToContinue.setOpaque(false);
+        clickToContinue.setContentAreaFilled(false);
         add(clickToContinue, BorderLayout.CENTER);
         
     }
-
-    @Override
-    public void actionPerformed(ActionEvent event) {
-       if(event.getSource()== event){
-           System.out.println("Clicked");
-       }
+    public JButton getClickToContinue() {
+        return clickToContinue;
     }
 }

@@ -1,7 +1,5 @@
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,47 +12,36 @@ import java.util.Scanner;
  * @author nadaziab
  */
 public class Authenticator {
-    String id, password, matchingPassword;
-    Map users = new HashMap(); //userID, userPassword
-    boolean authenticated = false;
+    private String login;
+    private ArrayList<String> users;
+    private Boolean check;
     
     public Authenticator() {
+        login = new String();
+        users = new ArrayList<>(5);
+        check =  false;
+        users.add("Frank Liang password");
+        users.add("Danny Khouri password");
+        users.add("Nada Ziab password");
+        users.add("Kyle Kolmansberger password");
         
+       
     }
-    public void addTestUsers() {
-        users.put("jsmith", "mypassword");
-        users.put("teacher14", "schoolisgreat");
-        users.put("pennstate12", "gopennstate");
-    }
-    
-    public void getUserCredentials() {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Enter your ID: ");
-        id = in.next();
-        System.out.print("Enter your password: ");
-        password = in.next();
-        System.out.println();
-    }
-    
-    public void findMathcingPassword() {
-        if (users.containsKey(id)) {
-            matchingPassword = users.get(id).toString();
+    public void checkLogin(String string){
+        for(int i = 0;i<users.size();i++){
+            if(login.equals(users.get(0))){
+                    check = true;
+                }
+                else{
+                    check = false;
+                }
         }
-        else {
-            System.out.println("Invalid ID");
-        }
-        
+    }
+    public void setLogin(String login){
+        this.login = login;
     }
     
-    public boolean matchToPassword() {
-        if (password.equals(matchingPassword)) {
-            authenticated = true;
-            System.out.println("User Authenticated");
-        }
-        else {
-            authenticated = false;
-            System.out.println("User Not Authenticated");
-        }
-        return authenticated;
+    public Boolean getCheck(){
+        return check;
     }
 }
