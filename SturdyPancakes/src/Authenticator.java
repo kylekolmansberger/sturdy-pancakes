@@ -29,7 +29,7 @@ public class Authenticator {
     }
     public void checkLogin(String string){
         for(int i = 0;i<users.size();i++){
-            if(login.equals(users.get(0))){
+            if(login.equals(users.get(i))){
                     check = true;
                 }
                 else{
