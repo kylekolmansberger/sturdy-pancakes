@@ -12,6 +12,5 @@ public abstract interface Menu {
     
 
     public void getUserSelection();
-    
     public void runUserSelection();
 }

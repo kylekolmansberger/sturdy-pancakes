@@ -12,10 +12,10 @@ import javax.swing.*;
  *
  * @author fyl5079
  */
-public class Controller {
+public class LoginController {
     private Model model;
     private View view;
-    public Controller(Model a, View b){
+    public LoginController(Model a, View b){
         model = a;
         view = b;
         newActionListener();
@@ -58,6 +58,9 @@ public class Controller {
                }
             }
         };
+        //=======================================================
+        //Adding Action Listeners
+        //=======================================================
          view.getMyJFrame().getWelcomeScreen().getClickToContinue().addActionListener(welcomeClicked);
          view.getMyJFrame().getLoginScreen().getLoginButton().addActionListener(loginClicked);
     }

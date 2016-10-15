@@ -10,6 +10,9 @@ public class MyJFrame extends JFrame
     private WelcomeScreen welcome;
     private LoginScreen login;
     private MainMenu mainMenu;
+    private EditPortfolio editPortfolio;
+    private GeneratePassword generatePassword;
+    private Settings settings;
     public MyJFrame(String name)
     {
     super(name);
@@ -17,6 +20,10 @@ public class MyJFrame extends JFrame
         welcome = new WelcomeScreen();
         login = new LoginScreen();
         mainMenu = new MainMenu();
+        editPortfolio = new EditPortfolio();
+        generatePassword = new GeneratePassword();
+        settings = new Settings();
+        
         add(welcome);
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -34,4 +41,14 @@ public class MyJFrame extends JFrame
     public MainMenu getMainMenu(){
         return mainMenu;
     }
+    public EditPortfolio getEditPortfolio(){
+        return editPortfolio;
+    }
+    public GeneratePassword getGeneratePassword(){
+        return generatePassword;
+    }
+    public Settings getSettings(){
+        return settings;
+    }
+   
 }
