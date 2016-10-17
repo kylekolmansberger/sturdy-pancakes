@@ -16,8 +16,7 @@ public class PancakeFlop extends JPanel implements ActionListener
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-        
-        g.setColor(Color.LIGHT_GRAY);
+        g.setColor(new Color(156, 93, 82));
         g.drawOval(x,x,50,30);
         g.fillOval(x, x, 50, 30);
         
