@@ -1,5 +1,4 @@
 
-import java.awt.BorderLayout;
 import java.awt.*;
 import javax.swing.*;
 /*
@@ -13,15 +12,22 @@ import javax.swing.*;
  * @author Frank
  */
 public class Settings extends JPanel{
-    private JLabel test;
+    private JButton backButton;
     public Settings(){
         super();
         setVisible(true);
         setBackground(Color.white);
-        setLayout(new BorderLayout());
-        test = new JLabel("Settings");
-        add(test);
+        setLayout(null);
         
+        backButton = new JButton("< Main Menu");
+        backButton.setBounds(0,0,110,40);
+        
+        add(backButton);
+        
+    }
+    
+    public JButton getBackButton(){
+        return backButton;
     }
     
 }

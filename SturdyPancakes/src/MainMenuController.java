@@ -25,14 +25,11 @@ public class MainMenuController implements Menu{
         //Menu choice pressed
         //=======================================================
         ActionListener menuChoice = new ActionListener(){
-            
-            
             @Override
             public void actionPerformed(ActionEvent event){
                 if(event.getSource() == view.getMyJFrame().getMainMenu().getB1()){
                     view.getMyJFrame().setContentPane(view.getMyJFrame().getEditPortfolio());
                     view.getMyJFrame().revalidate();
-                    System.out.println("clicked");
                 }
                 if(event.getSource() == view.getMyJFrame().getMainMenu().getB2()){
                     view.getMyJFrame().setContentPane(view.getMyJFrame().getGeneratePassword());
@@ -45,11 +42,34 @@ public class MainMenuController implements Menu{
             }
         };
         //=======================================================
+        //Menu choice pressed
+        //=======================================================
+        ActionListener backButton = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent event){
+                if (event.getSource() == view.getMyJFrame().getEditPortfolio().getBackButton()){
+                    view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
+                    view.getMyJFrame().revalidate();
+                }
+                if (event.getSource() == view.getMyJFrame().getGeneratePassword().getBackButton()){
+                    view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
+                    view.getMyJFrame().revalidate();
+                }
+                if (event.getSource() == view.getMyJFrame().getSettings().getBackButton()){
+                    view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
+                    view.getMyJFrame().revalidate();
+                }
+            }
+        };
+        //=======================================================
         //Adding Action Listeners
         //=======================================================
         view.getMyJFrame().getMainMenu().getB1().addActionListener(menuChoice);
         view.getMyJFrame().getMainMenu().getB2().addActionListener(menuChoice);
         view.getMyJFrame().getMainMenu().getB3().addActionListener(menuChoice);
+        view.getMyJFrame().getEditPortfolio().getBackButton().addActionListener(backButton);
+        view.getMyJFrame().getGeneratePassword().getBackButton().addActionListener(backButton);
+        view.getMyJFrame().getSettings().getBackButton().addActionListener(backButton);
     }
             
                    

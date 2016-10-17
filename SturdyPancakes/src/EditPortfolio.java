@@ -13,15 +13,20 @@ import javax.swing.*;
  * @author Frank
  */
 public class EditPortfolio extends JPanel{
-    private JLabel test;
+    private JButton backButton;
     public EditPortfolio(){
         super();
         setVisible(true);
         setBackground(Color.white);
-        setLayout(new BorderLayout());
-        test = new JLabel("Edit Portfolio");
-        add(test);
+        setLayout(null);
         
+        backButton = new JButton("< Main Menu");
+        backButton.setBounds(0,0,110,40);
+        
+        add(backButton);
+    }
+    public JButton getBackButton(){
+        return backButton;
     }
     
 }
