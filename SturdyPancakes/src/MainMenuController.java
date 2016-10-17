@@ -59,6 +59,10 @@ public class MainMenuController implements Menu{
                     view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
                     view.getMyJFrame().revalidate();
                 }
+                if (event.getSource() == view.getMyJFrame().getMainMenu().getBackButton()){
+                    view.getMyJFrame().setContentPane(view.getMyJFrame().getLoginScreen());
+                    view.getMyJFrame().revalidate();
+                }
             }
         };
         //=======================================================
@@ -67,6 +71,7 @@ public class MainMenuController implements Menu{
         view.getMyJFrame().getMainMenu().getB1().addActionListener(menuChoice);
         view.getMyJFrame().getMainMenu().getB2().addActionListener(menuChoice);
         view.getMyJFrame().getMainMenu().getB3().addActionListener(menuChoice);
+        view.getMyJFrame().getMainMenu().getBackButton().addActionListener(backButton);
         view.getMyJFrame().getEditPortfolio().getBackButton().addActionListener(backButton);
         view.getMyJFrame().getGeneratePassword().getBackButton().addActionListener(backButton);
         view.getMyJFrame().getSettings().getBackButton().addActionListener(backButton);
