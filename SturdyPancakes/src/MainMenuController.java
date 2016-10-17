@@ -1,5 +1,6 @@
 
 import java.awt.event.*;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -60,8 +61,16 @@ public class MainMenuController implements Menu{
                     view.getMyJFrame().revalidate();
                 }
                 if (event.getSource() == view.getMyJFrame().getMainMenu().getBackButton()){
-                    view.getMyJFrame().setContentPane(view.getMyJFrame().getLoginScreen());
-                    view.getMyJFrame().revalidate();
+                    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Logout",
+                        JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) 
+                        {
+                        view.getMyJFrame().setContentPane(view.getMyJFrame().getLoginScreen());
+                        view.getMyJFrame().revalidate();
+                        } else {
+                        view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
+                        view.getMyJFrame().revalidate();
+                        }
+                  
                 }
             }
         };
