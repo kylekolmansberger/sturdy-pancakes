@@ -16,7 +16,7 @@ import javax.swing.*;
 public class LoginScreen extends JPanel{
     
    private JTextField username,password;
-   private JLabel enterUser, enterPass;
+   private JLabel enterUser, enterPass,loginStatus;
    private JButton login;
    
    public LoginScreen(){
@@ -64,14 +64,24 @@ public class LoginScreen extends JPanel{
         c.gridy = 9;      
         c.insets = new Insets(10,0,0,0); 
         add(login,c);
+        
+        loginStatus = new JLabel("",SwingConstants.CENTER);
+        c.gridx = 1;
+        c.gridy = 10;      
+        c.insets = new Insets(10,0,0,0); 
+        add(loginStatus,c);
     }
     public JTextField getUsername() {
         return username;
     }
+   
     public JTextField getPassword() {
         return password;
     }
     public JButton getLoginButton(){
         return login;
+    }
+    public JLabel getLoginStatus(){
+        return loginStatus;
     }
 }

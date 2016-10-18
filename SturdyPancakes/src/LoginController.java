@@ -50,9 +50,14 @@ public class LoginController {
                        
                        view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
                        view.getMyJFrame().revalidate();
+                       view.getMyJFrame().getLoginScreen().getUsername().setText("");
+                       view.getMyJFrame().getLoginScreen().getPassword().setText("");
                    }
                    else{
                        System.out.println("Incorrect Login");
+                       view.getMyJFrame().getLoginScreen().getUsername().setText("");
+                       view.getMyJFrame().getLoginScreen().getPassword().setText("");
+                       view.getMyJFrame().getLoginScreen().getLoginStatus().setText("Invalid Login");
                    }
                    
                }
