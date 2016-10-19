@@ -1,7 +1,7 @@
 
 import java.awt.event.*;
 import javax.swing.*;
-
+import javax.swing.ActionMap;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +15,7 @@ import javax.swing.*;
 public class LoginController {
     private Model model;
     private View view;
+    private Object component;
     public LoginController(Model a, View b){
         model = a;
         view = b;
@@ -70,6 +71,14 @@ public class LoginController {
         //=======================================================
         //Adding Action Listeners
         //=======================================================
+         component.getInputMap().put(KeyStroke.getKeyStroke("SPACE"),
+                            "pressed");
+         component.getInputMap().put(KeyStroke.getKeyStroke("released SPACE"),
+                            "released");
+         component.getActionMap().put("pressed",
+                             pressedAction);
+         component.getActionMap().put("released",
+                             releasedAction);
          view.getMyJFrame().getWelcomeScreen().getClickToContinue().addActionListener(welcomeClicked);
          view.getMyJFrame().getLoginScreen().getLoginButton().addActionListener(loginClicked);
          view.getMyJFrame().getLoginScreen().getHacker().addActionListener(loginClicked);
