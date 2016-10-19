@@ -53,7 +53,7 @@ public class LoginScreen extends JPanel{
         c.gridy = 7;  
         add(enterPass,c);
         
-        password = new JTextField();
+        password = new JPasswordField();
         password.setFont(new Font("Serif",Font.PLAIN, 18));
         c.gridx = 1;  
         c.gridy = 8;      
