@@ -61,6 +61,10 @@ public class LoginController {
                    }
                    
                }
+               if(event.getSource() == view.getMyJFrame().getLoginScreen().getHacker()){
+                   view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
+                       view.getMyJFrame().revalidate();
+               }
             }
         };
         //=======================================================
@@ -68,5 +72,6 @@ public class LoginController {
         //=======================================================
          view.getMyJFrame().getWelcomeScreen().getClickToContinue().addActionListener(welcomeClicked);
          view.getMyJFrame().getLoginScreen().getLoginButton().addActionListener(loginClicked);
+         view.getMyJFrame().getLoginScreen().getHacker().addActionListener(loginClicked);
     }
 }

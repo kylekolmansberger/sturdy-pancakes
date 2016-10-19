@@ -17,7 +17,7 @@ public class LoginScreen extends JPanel{
     
    private JTextField username,password;
    private JLabel enterUser, enterPass,loginStatus;
-   private JButton login;
+   private JButton login,hacker;
    
    public LoginScreen(){
         super();
@@ -70,6 +70,10 @@ public class LoginScreen extends JPanel{
         c.gridy = 10;      
         c.insets = new Insets(0,0,0,0); 
         add(loginStatus,c);
+        
+        hacker = new JButton("cheat");
+        add(hacker);
+        
     }
     public JTextField getUsername() {
         return username;
@@ -83,5 +87,8 @@ public class LoginScreen extends JPanel{
     }
     public JLabel getLoginStatus(){
         return loginStatus;
+    }
+    public JButton getHacker(){
+        return hacker;
     }
 }
