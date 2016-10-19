@@ -68,7 +68,7 @@ public class LoginScreen extends JPanel{
         loginStatus = new JLabel("",SwingConstants.CENTER);
         c.gridx = 1;
         c.gridy = 10;      
-        c.insets = new Insets(10,0,0,0); 
+        c.insets = new Insets(0,0,0,0); 
         add(loginStatus,c);
     }
     public JTextField getUsername() {

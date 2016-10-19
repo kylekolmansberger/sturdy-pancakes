@@ -17,18 +17,42 @@ public class MainMenu extends JPanel{
     private JLabel l1;
     private JButton b1,b2,b3,backButton;
     public MainMenu() {
-        setLayout(new GridLayout(4,1));
-        l1 = new JLabel("Select Your Menu Option: ", SwingConstants.CENTER);
-        b1 = new JButton("1: Edit Portfolio");
-        b2 = new JButton("2: Generate Password");
-        b3 = new JButton("3: Settings");
-        backButton = new JButton("Log out");
+        setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
         
-        add(l1);
-        add(b1);
-        add(b2);
-        add(b3);
-        add(backButton);
+        c.gridwidth = 1;
+        c.gridheight = 1;
+        c.weightx = .5;
+        c.weighty = .5;
+        c.fill = GridBagConstraints.BOTH;
+        c.ipady = 20;
+        
+        l1 = new JLabel("Select Your Menu Option: ", SwingConstants.CENTER);
+        c.gridx = 1;  
+        c.gridy = 1;
+        c.insets = new Insets(10,0,0,0); 
+        add(l1, c);
+        
+        b1 = new JButton("1: Edit Portfolio");
+        c.gridx = 1;  
+        c.gridy = 2;
+        add(b1, c);
+        
+        b2 = new JButton("2: Generate Password");
+        c.gridx = 1;  
+        c.gridy = 3;
+        add(b2, c);
+        
+        b3 = new JButton("3: Settings");
+        c.gridx = 1;  
+        c.gridy = 4;
+        add(b3, c);
+        
+        backButton = new JButton("Log out");
+        c.gridx = 1;  
+        c.gridy = 5;
+        c.fill = GridBagConstraints.NONE;
+        add(backButton, c);
     }
     
     public JButton getB1(){
