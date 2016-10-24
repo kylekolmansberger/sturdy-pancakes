@@ -68,19 +68,32 @@ public class LoginController {
                }
             }
         };
-        //=======================================================
-        //Adding Action Listeners
-        //=======================================================
-         component.getInputMap().put(KeyStroke.getKeyStroke("SPACE"),
-                            "pressed");
-         component.getInputMap().put(KeyStroke.getKeyStroke("released SPACE"),
-                            "released");
-         component.getActionMap().put("pressed",
-                             pressedAction);
-         component.getActionMap().put("released",
-                             releasedAction);
+        
+        KeyListener pressedKeys = new KeyListener(){
+            
+            @Override
+            public void keyTyped(KeyEvent event) {
+            }
+
+            @Override
+            public void keyReleased(KeyEvent event) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent event) {
+                int action = event.getKeyCode();
+                if(action == event.VK_ENTER)
+                {
+                    model.getAuthenticate().setLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ " " + view.getMyJFrame().getLoginScreen().getPassword().getText());
+                    model.getAuthenticate().checkLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ " " + view.getMyJFrame().getLoginScreen().getPassword().getText());
+                }
+            }
+            
+        };
+        
          view.getMyJFrame().getWelcomeScreen().getClickToContinue().addActionListener(welcomeClicked);
          view.getMyJFrame().getLoginScreen().getLoginButton().addActionListener(loginClicked);
          view.getMyJFrame().getLoginScreen().getHacker().addActionListener(loginClicked);
+         
     }
 }
