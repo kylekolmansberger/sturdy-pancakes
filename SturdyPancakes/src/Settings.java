@@ -17,12 +17,19 @@ public class Settings extends JPanel{
         super();
         setVisible(true);
         setBackground(Color.white);
-        setLayout(null);
+        setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridwidth = 0;
+        c.gridheight = 0;
+        c.weightx = 1;
+        c.weighty = 1;
+        c.ipady =20;
         
         backButton = new JButton("< Main Menu");
-        backButton.setBounds(0,0,110,40);
-        
-        add(backButton);
+        backButton.setOpaque(false);
+        backButton.setContentAreaFilled(false);
+        c.anchor = GridBagConstraints.NORTHWEST;
+        add(backButton,c);
         
     }
     

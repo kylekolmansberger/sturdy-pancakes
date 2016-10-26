@@ -29,6 +29,7 @@ public class MainMenu extends JPanel{
         
         l1 = new JLabel("Select Your Menu Option: ", SwingConstants.CENTER);
         l1.setFont(new Font("Serif",Font.PLAIN, 18));
+        l1.setOpaque(false);
         c.gridx = 1;  
         c.gridy = 1;
         c.insets = new Insets(10,0,0,0); 
@@ -36,23 +37,31 @@ public class MainMenu extends JPanel{
         
         b1 = new JButton("Edit Portfolio");
         b1.setFont(new Font("Serif",Font.PLAIN, 18));
+        b1.setOpaque(false);
+        b1.setContentAreaFilled(false);
         c.gridx = 1;  
         c.gridy = 2;
         add(b1, c);
         
         b2 = new JButton("Generate Password");
         b2.setFont(new Font("Serif",Font.PLAIN, 18));
+        b2.setOpaque(false);
+        b2.setContentAreaFilled(false);
         c.gridx = 1;  
         c.gridy = 3;
         add(b2, c);
         
         b3 = new JButton("Settings");
         b3.setFont(new Font("Serif",Font.PLAIN, 18));
+        b3.setOpaque(false);
+        b3.setContentAreaFilled(false);
         c.gridx = 1;  
         c.gridy = 4;
         add(b3, c);
         
         backButton = new JButton("Log out");
+        backButton.setOpaque(false);
+        backButton.setContentAreaFilled(false);
         c.gridx = 1;  
         c.gridy = 5;
         c.fill = GridBagConstraints.NONE;

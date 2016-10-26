@@ -15,7 +15,6 @@ import javax.swing.ActionMap;
 public class LoginController {
     private Model model;
     private View view;
-    private Object component;
     public LoginController(Model a, View b){
         model = a;
         view = b;
@@ -48,7 +47,6 @@ public class LoginController {
                    model.getAuthenticate().setLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ " " + view.getMyJFrame().getLoginScreen().getPassword().getText());
                    model.getAuthenticate().checkLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ " " + view.getMyJFrame().getLoginScreen().getPassword().getText());
                    if(model.getAuthenticate().getCheck()==true){
-                       
                        view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
                        view.getMyJFrame().revalidate();
                        view.getMyJFrame().getLoginScreen().getUsername().setText("");
@@ -60,7 +58,6 @@ public class LoginController {
                        view.getMyJFrame().getLoginScreen().getPassword().setText("");
                        view.getMyJFrame().getLoginScreen().getLoginStatus().setText("Invalid Login");
                    }
-                   
                }
                if(event.getSource() == view.getMyJFrame().getLoginScreen().getHacker()){
                    view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
@@ -103,11 +100,9 @@ public class LoginController {
             }
             
         };
-        
          view.getMyJFrame().getWelcomeScreen().getClickToContinue().addActionListener(welcomeClicked);
          view.getMyJFrame().getLoginScreen().getLoginButton().addActionListener(loginClicked);
          view.getMyJFrame().getLoginScreen().getHacker().addActionListener(loginClicked);
          view.getMyJFrame().getLoginScreen().getPassword().addKeyListener(pressedKeys);
-         
     }
 }
