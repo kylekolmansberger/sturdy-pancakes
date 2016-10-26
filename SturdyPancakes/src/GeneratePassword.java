@@ -14,6 +14,7 @@ import javax.swing.*;
  */
 public class GeneratePassword extends JPanel{
     private JButton backButton;
+    private JCheckBox passwordOptions;
     public GeneratePassword(){
         super();
         setVisible(true);
@@ -30,8 +31,9 @@ public class GeneratePassword extends JPanel{
         backButton.setOpaque(false);
         backButton.setContentAreaFilled(false);
         c.anchor = GridBagConstraints.NORTHWEST;
-        
         add(backButton,c);
+        
+        
     }
     public JButton getBackButton(){
         return backButton;
