@@ -15,6 +15,7 @@ import javax.swing.*;
 public class GeneratePassword extends JPanel{
     private JButton backButton;
     private JCheckBox passwordOptions;
+    private JCheckBox numbers, letters, specialChars;
     public GeneratePassword(){
         super();
         setVisible(true);
@@ -33,7 +34,14 @@ public class GeneratePassword extends JPanel{
         c.anchor = GridBagConstraints.NORTHWEST;
         add(backButton,c);
         
+        numbers = new JCheckBox("Numbers");
+        letters = new JCheckBox("Letters");
+        specialChars = new JCheckBox("Special Characters");
         
+        add(numbers);
+        add(letters);
+        add(specialChars);
+                
     }
     public JButton getBackButton(){
         return backButton;
