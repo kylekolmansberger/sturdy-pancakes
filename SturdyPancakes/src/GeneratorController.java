@@ -10,7 +10,7 @@ import javax.swing.event.*;
 
 /**
  *
- * @author Frank
+ * @author Frank Liang
  */
 public class GeneratorController {
     Model model;
@@ -61,9 +61,6 @@ public class GeneratorController {
                     }
                     model.getGenerator().setChoices(temp);
                 }
-                if(event.getStateChange() == ItemEvent.DESELECTED){
-                    
-                }
             }
         };
         //=======================================================
@@ -75,6 +72,8 @@ public class GeneratorController {
                 Object source = event.getSource();
                 if(source == view.getMyJFrame().getGeneratePassword().getGenerate()){
                     System.out.println(model.getGenerator().getChoices());
+                    model.getGenerator().setParameters(model.getGenerator().getChoices().toString());
+                    view.getMyJFrame().getGeneratePassword().getGeneratedPassword().setText("Password: "+model.getGenerator().getGeneratedPassword());
                 }
             }
         };

@@ -14,7 +14,7 @@ import javax.swing.*;
  */
 public class GeneratePassword extends JPanel{
     private JButton backButton, generate;
-    private JLabel passwordOptions,empty;
+    private JLabel passwordOptions,generatedPassword;
     private JCheckBox numbers, letters, specialChars;
     public GeneratePassword(){
         super();
@@ -67,8 +67,15 @@ public class GeneratePassword extends JPanel{
         specialChars.setContentAreaFilled(false);
         c.gridx = 1;  
         c.gridy = 3;
-         c.insets = new Insets(0,0,0,0);
+        c.insets = new Insets(0,0,0,0);
         add(specialChars, c);
+        
+        generatedPassword = new JLabel("");
+        c.gridx = 1;  
+        c.gridy = 4;
+        c.insets = new Insets(100,0,0,0);
+        generatedPassword.setFont(new Font("Serif",Font.PLAIN, 18));
+        add(generatedPassword,c);
         
         generate = new JButton("Generate New Password");
         generate.setOpaque(false);
@@ -76,12 +83,11 @@ public class GeneratePassword extends JPanel{
         c.fill = GridBagConstraints.NONE;
         c.anchor = GridBagConstraints.WEST;
         c.gridx = 1;  
-        c.gridy = 4;
-        c.insets = new Insets(200,0,100,0);
+        c.gridy = 5;
+        c.insets = new Insets(100,0,100,0);
         add(generate,c);
         
-        empty = new JLabel("");
-        add(empty,c);
+        
     }
     public JButton getBackButton(){
         return backButton;
@@ -97,5 +103,8 @@ public class GeneratePassword extends JPanel{
     }
     public JButton getGenerate(){
         return generate;
+    }
+    public JLabel getGeneratedPassword(){
+        return generatedPassword;
     }
 }

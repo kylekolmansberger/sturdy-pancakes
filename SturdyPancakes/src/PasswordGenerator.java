@@ -6,11 +6,10 @@
 
 /**
  *
- * @author nadaziab
+ * @author Frank Liang
  */
 public class PasswordGenerator {
-    private boolean numbers, letters, specialChars;
-    private String generatedPassword;
+    private String generatedPassword, parameters;
     private char[] choices;
     
     public PasswordGenerator() {
@@ -19,32 +18,32 @@ public class PasswordGenerator {
         choices[0] = '-';
         choices[1] = '-';
         choices[2] = '-';
+        parameters = "---";
     }
     
-    public String generatePassword(boolean numbers, boolean letters, boolean specialChars) {
-        this.numbers = numbers;
-        this.letters = letters;
-        this.specialChars = specialChars;
-        
-        if (numbers && letters && specialChars) {
+    public String generatePassword() {
+        if(parameters == "---") {
             
         }
-        else if (numbers && letters) {
+        else if(parameters == "t--") {
             
         }
-        else if (numbers && specialChars) {
+        else if(parameters == "-t-") {
             
         }
-        else if (letters && specialChars) {
+        else if(parameters == "--t") {
             
         }
-        else if (numbers) {
+        else if(parameters == "tt-") {
             
         }
-        else if (letters) {
+        else if(parameters == "t-t") {
             
         }
-        else if (specialChars) {
+        else if(parameters == "-tt") {
+            
+        }
+        else if(parameters == "ttt") {
             
         }
         
@@ -57,5 +56,16 @@ public class PasswordGenerator {
     
     public void setChoices(char[] choices){
         this.choices = choices;
+    }
+    
+    public String getParameters(){
+        return parameters;
+    }
+    
+    public void setParameters(String parameters){
+        this.parameters = parameters;
+    }
+    public String getGeneratedPassword(){
+        return generatedPassword;
     }
 }
