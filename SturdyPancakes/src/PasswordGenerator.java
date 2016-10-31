@@ -47,39 +47,29 @@ public class PasswordGenerator {
             }
         }
         else if(parameters.equals("tt-")) {
-            for(int i=0;i<8;i++){
-                generatedChar[i] = numbers.charAt(r.nextInt(numbers.length()));
-            }
-            for(int i=9;i<16;i++){
-                generatedChar[i] = alphabet.charAt(r.nextInt(alphabet.length()));
+            for(int i=0;i<16;i++){
+                String temp = numbers+alphabet;
+                generatedChar[i] = temp.charAt(r.nextInt(temp.length()));
             }
         }
         else if(parameters.equals("t-t")) {
-            for(int i=0;i<8;i++){
-                generatedChar[i] = numbers.charAt(r.nextInt(numbers.length()));
-            }
-            for(int i=9;i<16;i++){
-                generatedChar[i] = specialChars.charAt(r.nextInt(specialChars.length()));
+            for(int i=0;i<16;i++){
+                String temp = numbers+specialChars;
+                generatedChar[i] = temp.charAt(r.nextInt(temp.length()));
             }
         }
         else if(parameters.equals("-tt")) {
-            for(int i=0;i<8;i++){
-                generatedChar[i] = alphabet.charAt(r.nextInt(alphabet.length()));
+            for(int i=0;i<16;i++){
+                String temp = alphabet+specialChars;
+                generatedChar[i] = temp.charAt(r.nextInt(temp.length()));
             }            
-            for(int i=9;i<16;i++){
-                 generatedChar[i] = specialChars.charAt(r.nextInt(specialChars.length()));
-            }
+            
         }
         else if(parameters.equals("ttt")) {
-            for(int i=0;i<6;i++){
-                generatedChar[i] = numbers.charAt(r.nextInt(numbers.length()));
+            for(int i=0;i<16;i++){
+                String temp = numbers+alphabet+specialChars;
+                generatedChar[i] = temp.charAt(r.nextInt(temp.length()));
             }            
-            for(int i=7;i<11;i++){
-                generatedChar[i] = alphabet.charAt(r.nextInt(alphabet.length()));
-            }
-            for(int i=12;i<16;i++){
-                generatedChar[i] = specialChars.charAt(r.nextInt(specialChars.length()));
-            }
         }
         generatedPassword = new String(generatedChar);
     }
