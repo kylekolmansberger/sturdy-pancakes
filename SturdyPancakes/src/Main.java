@@ -10,5 +10,6 @@ public class Main
         View view = new View(model);
         LoginController loginController = new LoginController(model, view);
         MainMenuController mainController = new MainMenuController(model, view);
+        GeneratorController generatorController = new GeneratorController(model,view);
     }
 }

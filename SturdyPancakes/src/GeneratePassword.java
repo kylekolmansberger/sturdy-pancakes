@@ -86,5 +86,16 @@ public class GeneratePassword extends JPanel{
     public JButton getBackButton(){
         return backButton;
     }
-    
+    public JCheckBox getNumbers(){
+        return numbers;
+    }
+    public JCheckBox getLetters(){
+        return letters;
+    }
+    public JCheckBox getSpecialChars(){
+        return specialChars;
+    }
+    public JButton getGenerate(){
+        return generate;
+    }
 }

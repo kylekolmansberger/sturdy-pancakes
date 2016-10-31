@@ -11,9 +11,14 @@
 public class PasswordGenerator {
     private boolean numbers, letters, specialChars;
     private String generatedPassword;
+    private char[] choices;
     
     public PasswordGenerator() {
         generatedPassword = "";
+        choices = new char[3];
+        choices[0] = '-';
+        choices[1] = '-';
+        choices[2] = '-';
     }
     
     public String generatePassword(boolean numbers, boolean letters, boolean specialChars) {
@@ -45,5 +50,12 @@ public class PasswordGenerator {
         
         
         return generatedPassword;
+    }
+    public char[] getChoices(){
+        return choices;
+    }
+    
+    public void setChoices(char[] choices){
+        this.choices = choices;
     }
 }
