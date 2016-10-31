@@ -71,9 +71,9 @@ public class GeneratorController {
             public void actionPerformed(ActionEvent event){
                 Object source = event.getSource();
                 if(source == view.getMyJFrame().getGeneratePassword().getGenerate()){
-                    System.out.println(model.getGenerator().getChoices());
-                    model.getGenerator().setParameters(model.getGenerator().getChoices().toString());
-                    view.getMyJFrame().getGeneratePassword().getGeneratedPassword().setText("Password: "+model.getGenerator().getGeneratedPassword());
+                    model.getGenerator().setParameters(new String(model.getGenerator().getChoices()));
+                    model.getGenerator().Generator();
+                    view.getMyJFrame().getGeneratePassword().getGeneratedPassword().setText("Password: " + model.getGenerator().getGeneratedPassword());
                 }
             }
         };
