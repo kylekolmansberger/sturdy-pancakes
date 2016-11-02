@@ -22,7 +22,7 @@ public class LoginScreen extends JPanel{
    public LoginScreen(){
         super();
         setVisible(true);
-        setBackground(Color.LIGHT_GRAY);
+        setBackground(Color.WHITE);
         setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         
@@ -63,6 +63,8 @@ public class LoginScreen extends JPanel{
         c.gridx = 1;
         c.gridy = 9;      
         c.insets = new Insets(10,0,0,0); 
+        login.setOpaque(false);
+        login.setContentAreaFilled(false);
         add(login,c);
         
         loginStatus = new JLabel("",SwingConstants.CENTER);
