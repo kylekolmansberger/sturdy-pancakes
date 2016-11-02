@@ -32,6 +32,7 @@ public class LoginController {
                if(event.getSource() == view.getMyJFrame().getWelcomeScreen().getClickToContinue()){
                    view.getMyJFrame().setContentPane(view.getMyJFrame().getLoginScreen());
                    view.getMyJFrame().revalidate();
+                   view.getMyJFrame().getLoginScreen().getUsername().requestFocusInWindow();
                }
             }
         };

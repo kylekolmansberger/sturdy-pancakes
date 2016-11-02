@@ -26,6 +26,7 @@ public class WelcomeScreen extends JPanel implements ActionListener{
         clickToContinue.setOpaque(false);
         clickToContinue.setContentAreaFilled(false);
         clickToContinue.setBorderPainted(false);
+        clickToContinue.setFocusable(false);
         add(clickToContinue, BorderLayout.CENTER);
         
         tm = new Timer(5, this);
