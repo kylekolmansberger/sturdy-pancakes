@@ -24,6 +24,7 @@ public class Authenticator {
         users.add("Danny Khouri password");
         users.add("Nada Ziab password");
         users.add("Kyle Kolmansberger password");
+        users.add("Test User password");
         
        
     }
