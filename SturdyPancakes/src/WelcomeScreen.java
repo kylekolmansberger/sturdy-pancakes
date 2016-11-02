@@ -25,14 +25,12 @@ public class WelcomeScreen extends JPanel implements ActionListener{
         clickToContinue = new JButton("Welcome Screen, Click to Continue");
         clickToContinue.setOpaque(false);
         clickToContinue.setContentAreaFilled(false);
+        clickToContinue.setBorderPainted(false);
         add(clickToContinue, BorderLayout.CENTER);
         
         tm = new Timer(5, this);
         x = 0;
         velx = 2;
-    
-    
-        
     }
     
     @Override
@@ -51,9 +49,9 @@ public class WelcomeScreen extends JPanel implements ActionListener{
     {
         if (x < 0 || x > 700)
             velx = -velx;
+            x = x + velx;
+            repaint();
         
-        x = x + velx;
-        repaint();
     }
     public JButton getClickToContinue() {
         return clickToContinue;

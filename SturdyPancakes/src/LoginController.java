@@ -54,7 +54,6 @@ public class LoginController {
                    }
                    else{
                        System.out.println("Incorrect Login");
-                       view.getMyJFrame().getLoginScreen().getUsername().setText("");
                        view.getMyJFrame().getLoginScreen().getPassword().setText("");
                        view.getMyJFrame().getLoginScreen().getLoginStatus().setText("Invalid Login");
                    }
