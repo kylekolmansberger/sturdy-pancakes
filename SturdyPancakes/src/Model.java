@@ -11,16 +11,16 @@
  */
 public class Model {
     private Authenticator authenticate;
-    private PasswordGenerator generator;
+    private PasswordGeneratorModel generator;
     public Model(){
         authenticate = new Authenticator();
-        generator = new PasswordGenerator();
+        generator = new PasswordGeneratorModel();
     }
     
     public Authenticator getAuthenticate(){
         return authenticate;
     }
-    public PasswordGenerator getGenerator(){
+    public PasswordGeneratorModel getGenerator(){
         return generator;
     }
 }

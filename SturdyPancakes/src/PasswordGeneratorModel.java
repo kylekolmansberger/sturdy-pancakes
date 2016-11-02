@@ -11,13 +11,13 @@ import java.util.*;
  *
  * @author Frank Liang
  */
-public class PasswordGenerator {
+public class PasswordGeneratorModel {
     private String generatedPassword, parameters;
     private char[] generatedChar,choices;
     private final String alphabet,numbers,specialChars;
     private Random r;
     
-    public PasswordGenerator() {
+    public PasswordGeneratorModel() {
         generatedChar = new char[16];
         generatedPassword = "";
         choices = new char[3];
