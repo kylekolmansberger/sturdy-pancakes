@@ -16,7 +16,7 @@ import javax.swing.*;
 public class WelcomeScreen extends JPanel implements ActionListener{
     private JButton clickToContinue;
     private Timer tm;
-    private int x,velx;
+    private int x,y,velx,vely;
     public WelcomeScreen(){
         super();
         setVisible(true);
@@ -31,7 +31,9 @@ public class WelcomeScreen extends JPanel implements ActionListener{
         
         tm = new Timer(5, this);
         x = 0;
-        velx = 2;
+        y = 0;
+        velx = 4;
+        vely = 2;
     }
     
     @Override
@@ -39,8 +41,8 @@ public class WelcomeScreen extends JPanel implements ActionListener{
     {
         super.paintComponent(g);
         g.setColor(new Color(156, 93, 82));
-        g.drawOval(x,x,50,30);
-        g.fillOval(x, x, 50, 30);
+        g.drawOval(x,y,50,30);
+        g.fillOval(x, y, 50, 30);
         
         tm.start();
     }
@@ -48,9 +50,14 @@ public class WelcomeScreen extends JPanel implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        if (x < 0 || x > 700)
+        if (x < 0 || x > 1280){
             velx = -velx;
+        }
+        if (y < 0 || y > 600){
+            vely = -vely;
+        }
             x = x + velx;
+            y = y + vely;
             repaint();
         
     }
