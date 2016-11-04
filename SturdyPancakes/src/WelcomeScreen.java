@@ -32,7 +32,7 @@ public class WelcomeScreen extends JPanel implements ActionListener{
         tm = new Timer(5, this);
         x = 0;
         y = 0;
-        velx = 4;
+        velx = 3;
         vely = 2;
     }
     
@@ -45,6 +45,7 @@ public class WelcomeScreen extends JPanel implements ActionListener{
         g.fillOval(x, y, 50, 30);
         
         tm.start();
+        
     }
     
     @Override
@@ -53,11 +54,12 @@ public class WelcomeScreen extends JPanel implements ActionListener{
         if (x < 0 || x > 1280){
             velx = -velx;
         }
-        if (y < 0 || y > 600){
+        if (y < 0 || y > 720){
             vely = -vely;
         }
             x = x + velx;
             y = y + vely;
+            
             repaint();
         
     }
