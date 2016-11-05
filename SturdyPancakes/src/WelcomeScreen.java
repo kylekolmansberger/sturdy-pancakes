@@ -21,7 +21,7 @@ public class WelcomeScreen extends JPanel{
         setVisible(true);
         setBackground(Color.white);
         setLayout(new BorderLayout());
-        clickToContinue = new JButton("Welcome Screen, Click to Continue");
+        clickToContinue = new JButton("Click to Continue");
         clickToContinue.setOpaque(false);
         clickToContinue.setContentAreaFilled(false);
         clickToContinue.setBorderPainted(false);
