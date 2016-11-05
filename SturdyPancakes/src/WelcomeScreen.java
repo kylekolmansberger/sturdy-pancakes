@@ -31,9 +31,10 @@ public class WelcomeScreen extends JPanel{
         pancake2 = new PancakeFlop(new ImageIcon("images/pancake.png"));
         pancake3 = new PancakeFlop(new ImageIcon("images/thePancake.png"));
         
-        pancake2.setXVel(4);
+        pancake2.setXVel(3);
+        pancake2.setYVel(4);
+        pancake3.setXVel(4);
         pancake3.setYVel(3);
-        
         
         pancake.setMyBounds(pancake.getMyBounds());
         pancake2.setMyBounds(pancake2.getMyBounds());

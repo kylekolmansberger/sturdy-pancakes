@@ -22,7 +22,7 @@ public class PancakeFlop extends JLabel{
         super(a);
         bounds = new Rectangle(0,0,200,200);
         xVel = 3;
-        yVel = 2;
+        yVel = 3;
         x = 0;
         y = 0;
         xRes = 1180;
