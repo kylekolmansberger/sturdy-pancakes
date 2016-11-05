@@ -27,12 +27,14 @@ public class WelcomeScreen extends JPanel{
         clickToContinue.setBorderPainted(false);
         clickToContinue.setFocusable(false);
         
-        pancake = new PancakeFlop(new ImageIcon("images/pancake.png"));
-        pancake2 = new PancakeFlop(new ImageIcon("images/Original_ Buttermilk_Pancakes.png"));
-        pancake3 = new PancakeFlop(new ImageIcon("images/pancake.jpg"));
+        pancake = new PancakeFlop(new ImageIcon("images/aPancake.png"));
+        pancake2 = new PancakeFlop(new ImageIcon("images/pancake.png"));
+        pancake3 = new PancakeFlop(new ImageIcon("images/thePancake.png"));
         
         pancake2.setXVel(4);
         pancake3.setYVel(3);
+        pancake2.setX(1180);
+        pancake3.setY(580);
         
         pancake.setMyBounds(pancake.getMyBounds());
         pancake2.setMyBounds(pancake2.getMyBounds());

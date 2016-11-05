@@ -58,6 +58,18 @@ public class PancakeFlop extends JLabel{
     public void setYVel(int yVel){
         this.yVel = yVel;
     }
+    public int getX(){
+        return x;
+    }
+    public void setX(int x){
+        this.x = x;
+    }
+    public int getY(){
+        return y;
+    }
+    public void setY(int y){
+        this.y = y;
+    }
     public Rectangle getMyBounds(){
         bounds = new Rectangle(x,y,50,50);
         return bounds;
