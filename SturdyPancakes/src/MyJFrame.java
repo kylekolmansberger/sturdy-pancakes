@@ -27,8 +27,8 @@ public class MyJFrame extends JFrame
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(1280,750);
         setResizable(true);
-        setVisible(true);   
-        
+        setVisible(true);  
+        getContentPane().getSize();
     }
     public WelcomeScreen getWelcomeScreen(){
         return welcome;
@@ -48,5 +48,7 @@ public class MyJFrame extends JFrame
     public Settings getSettings(){
         return settings;
     }
-   
+   public JFrame getMyJFrame(){
+       return this;
+   }
 }

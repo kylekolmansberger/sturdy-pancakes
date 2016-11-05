@@ -19,6 +19,7 @@ public class LoginController {
         model = a;
         view = b;
         newActionListener();
+        
     }
     
     private void newActionListener(){ 
@@ -30,9 +31,12 @@ public class LoginController {
             public void actionPerformed(ActionEvent event)
             {
                if(event.getSource() == view.getMyJFrame().getWelcomeScreen().getClickToContinue()){
-                   view.getMyJFrame().setContentPane(view.getMyJFrame().getLoginScreen());
-                   view.getMyJFrame().revalidate();
-                   view.getMyJFrame().getLoginScreen().getUsername().requestFocusInWindow();
+                    view.getMyJFrame().setContentPane(view.getMyJFrame().getLoginScreen());
+                    view.getMyJFrame().revalidate();
+                    view.getMyJFrame().getLoginScreen().getUsername().requestFocusInWindow();
+                    view.getMyJFrame().getWelcomeScreen().getPancake().getTim().stop();
+                    view.getMyJFrame().getWelcomeScreen().getPancake2().getTim().stop();
+                    view.getMyJFrame().getWelcomeScreen().getPancake3().getTim().stop();
                }
             }
         };

@@ -16,7 +16,7 @@ import javax.swing.*;
  */
 public class PancakeFlop extends JLabel{
     private Rectangle bounds;
-    private int x,y, xVel,yVel;
+    private int x,y, xVel,yVel,xRes,yRes;
     private Timer tim;
     public PancakeFlop(ImageIcon a) {
         super(a);
@@ -25,22 +25,33 @@ public class PancakeFlop extends JLabel{
         yVel = 2;
         x = 0;
         y = 0;
+        xRes = 1180;
+        yRes = 680;
+                
         setBounds(getMyBounds());
         
         ActionListener action = new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent event) 
             {
-                if(x < 0 || x > 1180){
-                    xVel = -xVel;
+                if(x < -40){
+                    xVel = Math.abs(xVel);
                 }
-                if(y < 0 || y > 620){
-                    yVel = -yVel;
+                if(y < -40){
+                    yVel = Math.abs(yVel);
                 }
+                if(x > xRes){
+                    xVel = -Math.abs(xVel);
+                }
+                if(y > yRes){
+                    yVel = -Math.abs(yVel);
+                }
+                
                 x = x + xVel;
                 y = y + yVel;
                 bounds = new Rectangle(x,y,200,200);
                 setBounds(bounds);
+                
             }
         };
         tim = new Timer(5, action);
@@ -69,6 +80,18 @@ public class PancakeFlop extends JLabel{
     }
     public void setY(int y){
         this.y = y;
+    }
+    public int getYRes(){
+        return yRes;
+    }
+    public void setYRes(int yRes){
+        this.yRes = yRes;
+    }
+    public int getXRes(){
+        return xRes;
+    }
+    public void setXRes(int xRes){
+        this.xRes = xRes;
     }
     public Rectangle getMyBounds(){
         bounds = new Rectangle(x,y,50,50);

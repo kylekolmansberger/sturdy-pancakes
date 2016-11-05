@@ -33,8 +33,7 @@ public class WelcomeScreen extends JPanel{
         
         pancake2.setXVel(4);
         pancake3.setYVel(3);
-        pancake2.setX(1180);
-        pancake3.setY(580);
+        
         
         pancake.setMyBounds(pancake.getMyBounds());
         pancake2.setMyBounds(pancake2.getMyBounds());
@@ -48,10 +47,36 @@ public class WelcomeScreen extends JPanel{
         pancake.getTim().start();
         pancake2.getTim().start();
         pancake3.getTim().start();
+        
+        this.addComponentListener(new ComponentListener() {
+
+    		public void componentResized(ComponentEvent e) {
+    			pancake.setXRes(e.getComponent().getWidth()-100);
+                        pancake.setYRes(e.getComponent().getHeight()-100);
+                        pancake2.setXRes(e.getComponent().getWidth()-100);
+                        pancake2.setYRes(e.getComponent().getHeight()-100);
+                        pancake3.setXRes(e.getComponent().getWidth()-100);
+                        pancake3.setYRes(e.getComponent().getHeight()-100);
+    		}
+    		public void componentHidden(ComponentEvent e) {}
+
+    		public void componentMoved(ComponentEvent e) {}
+
+    		public void componentShown(ComponentEvent e) {}
+    	});
     }
     
    
     public JButton getClickToContinue() {
         return clickToContinue;
+    }
+    public PancakeFlop getPancake(){
+        return pancake;
+    }
+    public PancakeFlop getPancake2(){
+        return pancake2;
+    }
+    public PancakeFlop getPancake3(){
+        return pancake3;
     }
 }
