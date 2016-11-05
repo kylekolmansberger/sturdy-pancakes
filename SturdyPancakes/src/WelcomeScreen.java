@@ -17,6 +17,7 @@ public class WelcomeScreen extends JPanel implements ActionListener{
     private JButton clickToContinue;
     private Timer tm;
     private int x,y,velx,vely;
+    private Image pancake;
     public WelcomeScreen(){
         super();
         setVisible(true);
