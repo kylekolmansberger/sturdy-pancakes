@@ -2,6 +2,7 @@
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.ActionMap;
+import java.sql.*;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,13 +16,30 @@ import javax.swing.ActionMap;
 public class LoginController {
     private Model model;
     private View view;
-    public LoginController(Model a, View b){
+    private String database;public LoginController(Model a, View b){
         model = a;
         view = b;
         newActionListener();
+        database();
+        
+    
         
     }
-    
+    private void database(){
+        try{
+            Class.forName("sturdydatabase1.jdbc.odbc.JdbcOdbcDriver");
+            database = "jdbs:odbc:Driver={Microsoft Access Driver (*.mdb)};DBQ=myDB.mdb;";
+            Connection conn = DriverManager.getConnection(database, "","");
+            Statement s = conn.createStatement();
+            
+            String tableName = "myTable" + String.valueOf((int)(Math.random() * 100.00));
+            String createTable = "CREATE TABLE " + tableName + "(id Integer, name Text(32))";
+            s.execute(createTable);
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
     private void newActionListener(){ 
         //=======================================================
         //Welcome Screen
