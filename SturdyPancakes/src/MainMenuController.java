@@ -29,7 +29,7 @@ public class MainMenuController implements Menu{
             @Override
             public void actionPerformed(ActionEvent event){
                 if(event.getSource() == view.getMyJFrame().getMainMenu().getB1()){
-                    view.getMyJFrame().setContentPane(view.getMyJFrame().getEditPortfolio());
+                    view.getMyJFrame().setContentPane(view.getMyJFrame().getManagePortfolio());
                     view.getMyJFrame().revalidate();
                 }
                 if(event.getSource() == view.getMyJFrame().getMainMenu().getB2()){
@@ -48,7 +48,7 @@ public class MainMenuController implements Menu{
         ActionListener backButton = new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent event){
-                if (event.getSource() == view.getMyJFrame().getEditPortfolio().getBackButton()){
+                if (event.getSource() == view.getMyJFrame().getManagePortfolio().getBackButton()){
                     view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
                     view.getMyJFrame().revalidate();
                 }
@@ -81,7 +81,7 @@ public class MainMenuController implements Menu{
         view.getMyJFrame().getMainMenu().getB2().addActionListener(menuChoice);
         view.getMyJFrame().getMainMenu().getB3().addActionListener(menuChoice);
         view.getMyJFrame().getMainMenu().getBackButton().addActionListener(backButton);
-        view.getMyJFrame().getEditPortfolio().getBackButton().addActionListener(backButton);
+        view.getMyJFrame().getManagePortfolio().getBackButton().addActionListener(backButton);
         view.getMyJFrame().getGeneratePassword().getBackButton().addActionListener(backButton);
         view.getMyJFrame().getSettings().getBackButton().addActionListener(backButton);
     }
