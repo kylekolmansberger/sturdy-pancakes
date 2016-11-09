@@ -101,4 +101,7 @@ public class LoginScreen extends JPanel{
     public JButton getHacker(){
         return hacker;
     }
+    public JButton getRegister(){
+        return register;
+    }
 }

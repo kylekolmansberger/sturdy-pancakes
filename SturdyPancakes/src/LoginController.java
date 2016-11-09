@@ -67,6 +67,17 @@ public class LoginController {
                    view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
                        view.getMyJFrame().revalidate();
                }
+               if (event.getSource() == view.getMyJFrame().getLoginScreen().getRegister()){
+                    if (JOptionPane.showConfirmDialog(null, "Enter In Username and Password", "Register", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) 
+                    {
+                        view.getMyJFrame().setContentPane(view.getMyJFrame().getLoginScreen());
+                        view.getMyJFrame().revalidate();
+                        } 
+                    else{
+                        view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
+                        view.getMyJFrame().revalidate();
+                        }
+                }
             }
         };
         KeyListener pressedKeys = new KeyListener(){
@@ -102,5 +113,7 @@ public class LoginController {
          view.getMyJFrame().getLoginScreen().getLoginButton().addActionListener(loginClicked);
          view.getMyJFrame().getLoginScreen().getHacker().addActionListener(loginClicked);
          view.getMyJFrame().getLoginScreen().getPassword().addKeyListener(pressedKeys);
+         view.getMyJFrame().getLoginScreen().getRegister().addActionListener(loginClicked);
+         
     }
 }
