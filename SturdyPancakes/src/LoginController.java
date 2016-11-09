@@ -20,26 +20,8 @@ public class LoginController {
         model = a;
         view = b;
         newActionListener();
-        database();
-        
+    }
     
-        
-    }
-    private void database(){
-        try{
-            Class.forName("sturdydatabase1.jdbc.odbc.JdbcOdbcDriver");
-            database = "jdbs:odbc:Driver={Microsoft Access Driver (*.mdb)};DBQ=myDB.mdb;";
-            Connection conn = DriverManager.getConnection(database, "","");
-            Statement s = conn.createStatement();
-            
-            String tableName = "myTable" + String.valueOf((int)(Math.random() * 100.00));
-            String createTable = "CREATE TABLE " + tableName + "(id Integer, name Text(32))";
-            s.execute(createTable);
-        }
-        catch(Exception ex){
-            ex.printStackTrace();
-        }
-    }
     private void newActionListener(){ 
         //=======================================================
         //Welcome Screen
