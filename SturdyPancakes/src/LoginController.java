@@ -16,7 +16,7 @@ import java.sql.*;
 public class LoginController {
     private Model model;
     private View view;
-    private String database;public LoginController(Model a, View b){
+    public LoginController(Model a, View b){
         model = a;
         view = b;
         newActionListener();
@@ -69,17 +69,13 @@ public class LoginController {
                }
             }
         };
-        
         KeyListener pressedKeys = new KeyListener(){
-            
             @Override
             public void keyTyped(KeyEvent event) {
             }
-
             @Override
             public void keyReleased(KeyEvent event) {
             }
-
             @Override
             public void keyPressed(KeyEvent event) {
                 int action = event.getKeyCode();
@@ -101,7 +97,6 @@ public class LoginController {
                    }
                 }
             }
-            
         };
          view.getMyJFrame().getWelcomeScreen().getClickToContinue().addActionListener(welcomeClicked);
          view.getMyJFrame().getLoginScreen().getLoginButton().addActionListener(loginClicked);
