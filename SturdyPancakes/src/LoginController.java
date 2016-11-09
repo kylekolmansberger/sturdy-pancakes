@@ -64,8 +64,12 @@ public class LoginController {
                    }
                }
                if(event.getSource() == view.getMyJFrame().getLoginScreen().getHacker()){
-                   view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
-                       view.getMyJFrame().revalidate();
+                    view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
+                    view.getMyJFrame().revalidate();
+               }
+               if(event.getSource() == view.getMyJFrame().getLoginScreen().getRegister()){
+                    view.getMyJFrame().setContentPane(view.getMyJFrame().getRegister());
+                    view.getMyJFrame().revalidate();
                }
             }
         };
@@ -102,5 +106,7 @@ public class LoginController {
          view.getMyJFrame().getLoginScreen().getLoginButton().addActionListener(loginClicked);
          view.getMyJFrame().getLoginScreen().getHacker().addActionListener(loginClicked);
          view.getMyJFrame().getLoginScreen().getPassword().addKeyListener(pressedKeys);
+         view.getMyJFrame().getLoginScreen().getRegister().addActionListener(loginClicked);
+         
     }
 }
