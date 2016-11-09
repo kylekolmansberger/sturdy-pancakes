@@ -36,7 +36,7 @@ public class MainMenu extends JPanel{
         c.insets = new Insets(10,0,0,0); 
         add(l1, c);
         
-        b1 = new JButton("Edit Portfolio");
+        b1 = new JButton("Manage Portfolio");
         b1.setFont(new Font("Serif",Font.PLAIN, 18));
         b1.setOpaque(false);
         b1.setContentAreaFilled(false);

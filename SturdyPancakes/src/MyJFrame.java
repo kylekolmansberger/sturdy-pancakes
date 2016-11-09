@@ -8,7 +8,7 @@ public class MyJFrame extends JFrame
     private WelcomeScreen welcome;
     private LoginScreen login;
     private MainMenu mainMenu;
-    private EditPortfolio editPortfolio;
+    private ManagePortfolio managePortfolio;
     private GeneratePassword generatePassword;
     private Settings settings;
     private Register register;
@@ -19,7 +19,7 @@ public class MyJFrame extends JFrame
         welcome = new WelcomeScreen();
         login = new LoginScreen();
         mainMenu = new MainMenu();
-        editPortfolio = new EditPortfolio();
+        managePortfolio = new ManagePortfolio();
         generatePassword = new GeneratePassword();
         settings = new Settings();
         register = new Register();
@@ -40,8 +40,8 @@ public class MyJFrame extends JFrame
     public MainMenu getMainMenu(){
         return mainMenu;
     }
-    public EditPortfolio getEditPortfolio(){
-        return editPortfolio;
+    public ManagePortfolio getManagePortfolio(){
+        return managePortfolio;
     }
     public GeneratePassword getGeneratePassword(){
         return generatePassword;
