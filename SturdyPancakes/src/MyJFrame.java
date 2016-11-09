@@ -11,6 +11,7 @@ public class MyJFrame extends JFrame
     private EditPortfolio editPortfolio;
     private GeneratePassword generatePassword;
     private Settings settings;
+    private Register register;
     public MyJFrame(String name)
     {
     super(name);
@@ -21,7 +22,7 @@ public class MyJFrame extends JFrame
         editPortfolio = new EditPortfolio();
         generatePassword = new GeneratePassword();
         settings = new Settings();
-        
+        register = new Register();
         add(welcome);
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -47,6 +48,9 @@ public class MyJFrame extends JFrame
     }
     public Settings getSettings(){
         return settings;
+    }
+    public Register getRegister(){
+        return register;
     }
    public JFrame getMyJFrame(){
        return this;

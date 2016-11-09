@@ -1,5 +1,4 @@
 
-import java.awt.BorderLayout;
 import java.awt.*;
 import javax.swing.*;
 
@@ -11,16 +10,13 @@ import javax.swing.*;
 
 /**
  *
- * @author Frank
+ * @author fyl5079
  */
-public class LoginScreen extends JPanel{
-    
-   private JTextField username,password;
-   private JLabel enterUser, enterPass,loginStatus;
-   private JButton login,hacker,register;
-   private JOptionPane option;
-   
-   public LoginScreen(){
+public class Register extends JPanel{
+    private JLabel enterUser,enterPass,registerStatus;
+    private JTextField username,password;
+    private JButton register;
+    public Register(){
         super();
         setVisible(true);
         setBackground(Color.WHITE);
@@ -54,54 +50,30 @@ public class LoginScreen extends JPanel{
         c.gridy = 7;  
         add(enterPass,c);
         
-        password = new JPasswordField();
+        password = new JTextField();
         password.setFont(new Font("Serif",Font.PLAIN, 18));
         c.gridx = 1;  
         c.gridy = 8;      
         add(password, c);
         
-        login = new JButton("Login");
+        register = new JButton("Register");
         c.gridx = 1;
         c.gridy = 9;      
         c.insets = new Insets(10,0,0,0); 
-        login.setOpaque(false);
-        login.setContentAreaFilled(false);
-        add(login,c);
-        
-        loginStatus = new JLabel("",SwingConstants.CENTER);
-        c.gridx = 1;
-        c.gridy = 10;      
-        c.insets = new Insets(0,0,0,0); 
-        add(loginStatus,c);
-        
-        register = new JButton("Register");
-        c.gridx = 1;
-        c.gridy = 11;      
-        c.insets = new Insets(0,0,0,0); 
         register.setOpaque(false);
         register.setContentAreaFilled(false);
         add(register,c);
         
-        hacker = new JButton("cheat");
-        add(hacker);
-    }
-    public JTextField getUsername() {
-        return username;
-    }
-   
-    public JTextField getPassword() {
-        return password;
-    }
-    public JButton getLoginButton(){
-        return login;
-    }
-    public JLabel getLoginStatus(){
-        return loginStatus;
-    }
-    public JButton getHacker(){
-        return hacker;
+        registerStatus = new JLabel("",SwingConstants.CENTER);
+        c.gridx = 1;
+        c.gridy = 10;      
+        c.insets = new Insets(0,0,0,0); 
+        add(registerStatus,c);
     }
     public JButton getRegister(){
         return register;
+    }
+    public JLabel getRegisterStatus(){
+        return registerStatus;
     }
 }
