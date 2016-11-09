@@ -46,7 +46,8 @@ public class WriteToFileExample {
         
         ArrayList<String> usernames = new ArrayList<>();
         ArrayList<String> passwords = new ArrayList<>();
-        
+        ArrayList<String> labels = new ArrayList<>();
+                
         usernames.add(u1);
         usernames.add(u2);
         usernames.add(u3);
@@ -55,9 +56,13 @@ public class WriteToFileExample {
         passwords.add(p2);
         passwords.add(p3);
         
-        s1 = usernames.get(0) + " " + passwords.get(0);
-        s2 = usernames.get(1) + " " + passwords.get(1);
-        s3 = usernames.get(2) + " " + passwords.get(2);
+        labels.add("Facebook");
+        labels.add("Twitter");
+        labels.add("Instagram");
+        
+        s1 = labels.get(0) + " " + usernames.get(0) + " " + passwords.get(0);
+        s2 = labels.get(1) + " " + usernames.get(1) + " " + passwords.get(1);
+        s3 = labels.get(2) + " " + usernames.get(2) + " " + passwords.get(2);
         
         
         
@@ -106,13 +111,15 @@ public class WriteToFileExample {
         } finally {
             br.close();
         }
-
-        System.out.println(everything);
+       
+        //System.out.println(everything);
         String[] tokens = everything.split("\\s+");
         //System.out.println(tokens.length);
         
         ArrayList<String> a1 = new ArrayList<>(); //usernames
         ArrayList<String> a2 = new ArrayList<>(); //passwords
+        ArrayList<String> a3 = new ArrayList<>(); //labels
+        
         
         
         for (int i = 0; i < tokens.length; i++) {
@@ -124,6 +131,7 @@ public class WriteToFileExample {
             }
             
         }
+        /*
         System.out.println("usernames");
         for (int i = 0; i < a1.size(); i++) {
             System.out.println(a1.get(i));
@@ -134,5 +142,8 @@ public class WriteToFileExample {
         for (int i = 0; i < a2.size(); i++) {
             System.out.println(a2.get(i));
         }
+                */
+        
+        System.out.println(a1.get(0) + " " + a2.get(0) + " " + a3.get(0));
     }
 }
