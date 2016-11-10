@@ -36,8 +36,8 @@ public class RegisterController{
             {
                if(event.getSource() == view.getMyJFrame().getRegister().getRegister()){
                    
-                    username = view.getMyJFrame().getLoginScreen().getUsername().toString();
-                    password = view.getMyJFrame().getLoginScreen().getPassword().toString();
+                    username = view.getMyJFrame().getRegister().getUsername().getText();
+                    password = view.getMyJFrame().getRegister().getPassword().getText();
                     
                     try {
                         loginFile = new File (username + ".txt");
@@ -55,7 +55,7 @@ public class RegisterController{
             bw.close();
 
         } catch (IOException e) {
-            
+            System.out.println("Failed");
         }
                     view.getMyJFrame().getRegister().getRegisterStatus().setText("Registered");
                }

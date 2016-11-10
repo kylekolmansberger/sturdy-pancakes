@@ -93,4 +93,10 @@ public class Register extends JPanel{
     public JButton getBack(){
         return backButton;
     }
+    public JTextField getUsername() {
+        return username;
+    }
+    public JTextField getPassword() {
+        return password;
+    }
 }
