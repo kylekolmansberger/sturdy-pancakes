@@ -12,9 +12,13 @@
 public class Model {
     private Authenticator authenticate;
     private PasswordGeneratorModel generator;
+    private CategoryModel categoryManager;
+    private CredentialModel credentialManager;
     public Model(){
         authenticate = new Authenticator();
         generator = new PasswordGeneratorModel();
+        categoryManager = new CategoryModel();
+        credentialManager = new CredentialModel();
     }
     
     public Authenticator getAuthenticate(){
@@ -22,5 +26,11 @@ public class Model {
     }
     public PasswordGeneratorModel getGenerator(){
         return generator;
+    }
+    public CategoryModel getCategoryManager() {
+        return categoryManager;
+    }
+    public CredentialModel getCredentialManager() {
+        return credentialManager;
     }
 }
