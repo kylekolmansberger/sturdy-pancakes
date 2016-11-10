@@ -43,12 +43,11 @@ public class RegisterController{
                         loginFile = new File (username + ".txt");
 
                         // if file doesnt exists, then create it
-                        /*
+                        
                         if (!loginFile.exists()) {
                             loginFile.createNewFile();
                         }
-                                */
-                        loginFile.createNewFile();
+                       
 
             FileWriter fw = new FileWriter(loginFile.getAbsoluteFile());
             BufferedWriter bw = new BufferedWriter(fw);
