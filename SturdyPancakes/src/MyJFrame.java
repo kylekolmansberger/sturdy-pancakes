@@ -40,7 +40,7 @@ public class MyJFrame extends JFrame
     public MainMenu getMainMenu(){
         return mainMenu;
     }
-    public ManagePortfolio getEditPortfolio(){
+    public ManagePortfolio getManagePortfolio(){
         return managePortfolio;
     }
     public GeneratePassword getGeneratePassword(){
