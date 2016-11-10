@@ -22,23 +22,21 @@ public class GeneratePassword extends JPanel{
         setBackground(Color.white);
         setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
+        
+        
+        
         c.gridwidth = 1;
         c.gridheight = 1;
         c.weightx = 1;
         c.weighty = 1;
-        c.ipady =60;
+        c.ipady =20;
         
         backButton = new JButton("< Main Menu");
-        
         backButton.setOpaque(false);
         backButton.setContentAreaFilled(false);
         c.anchor = GridBagConstraints.NORTHWEST;
-        c.gridx = 0;
-        c.gridy = 0;
         add(backButton,c);
-        
-        c.anchor = GridBagConstraints.WEST;
-        
+        c.ipady = 60;
         passwordOptions = new JLabel("Choose Password Parameters:");
         passwordOptions.setFont(new Font("Serif",Font.PLAIN, 18));
         passwordOptions.setOpaque(false);

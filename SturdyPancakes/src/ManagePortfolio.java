@@ -21,8 +21,8 @@ public class ManagePortfolio extends JPanel{
         setBackground(Color.white);
         setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
-        c.gridwidth = 0;
-        c.gridheight = 0;
+        c.gridwidth = 1;
+        c.gridheight = 1;
         c.weightx = 1;
         c.weighty = 1;
         c.ipady =20;
@@ -32,32 +32,69 @@ public class ManagePortfolio extends JPanel{
         backButton.setContentAreaFilled(false);
         c.anchor = GridBagConstraints.NORTHWEST;
         add(backButton,c);
-        
+        c.ipadx = 100;
+        c.ipady = 100;
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.anchor = GridBagConstraints.WEST;
+   
+        c.gridx = 1;
+        c.gridy = 0;
         createCategoryButton = new JButton("Create Category");
         createCategoryButton.setOpaque(false);
         createCategoryButton.setContentAreaFilled(false);
+        add(createCategoryButton,c);
         
+        c.gridx = 1;
+        c.gridy = 1;
         editCategoryButton = new JButton("Edit Category");
         editCategoryButton.setOpaque(false);
         editCategoryButton.setContentAreaFilled(false);
         
+        add(editCategoryButton,c);
+        
+        c.gridx = 1;
+        c.gridy = 2;
         createCredentialsButton = new JButton("Create Credentials");
         createCredentialsButton.setOpaque(false);
         createCredentialsButton.setContentAreaFilled(false);
+        add(createCredentialsButton,c);
         
+        c.gridx = 1;
+        c.gridy = 3;
         editCredentialsButton = new JButton("Edit Credentials");
         editCredentialsButton.setOpaque(false); 
         editCredentialsButton.setContentAreaFilled(false);
+        add(editCredentialsButton,c);
         
+        c.ipadx = 0;
+        c.ipady = 0;
+        c.gridx=2;
+        c.fill = GridBagConstraints.NONE;
+        c.anchor = GridBagConstraints.SOUTHEAST;
         settingsButton = new JButton("Settings");
         settingsButton.setOpaque(false);
         settingsButton.setContentAreaFilled(false);
-        
+        add(settingsButton,c);
         
         
     }
     public JButton getBackButton(){
         return backButton;
+    }
+    public JButton getCreateCredentialsButton() {
+        return createCredentialsButton;
+    }
+    public JButton getEditCredentialsButton() {
+        return editCredentialsButton;
+    }
+    public JButton getCreateCategoryButton() {
+        return createCategoryButton;
+    }
+    public JButton getEditCategoryButton() {
+        return editCategoryButton;
+    }
+    public JButton getSettingsButton() {
+        return settingsButton;
     }
     
 }
