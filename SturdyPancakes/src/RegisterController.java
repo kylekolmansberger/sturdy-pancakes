@@ -15,7 +15,6 @@ import java.io.IOException;
  *
  * @author fyl5079
  */
-
 public class RegisterController{
     private Model model;
     private View view;
@@ -63,6 +62,7 @@ public class RegisterController{
                }
                if(event.getSource() == view.getMyJFrame().getRegister().getBack()){
                    view.getMyJFrame().setContentPane(view.getMyJFrame().getLoginScreen());
+                   view.getMyJFrame().getRegister().getRegisterStatus().setText("");
                }
             }
         };

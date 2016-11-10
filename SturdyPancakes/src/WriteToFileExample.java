@@ -64,10 +64,6 @@ public class WriteToFileExample {
         s2 = labels.get(1) + " " + usernames.get(1) + " " + passwords.get(1);
         s3 = labels.get(2) + " " + usernames.get(2) + " " + passwords.get(2);
         
-        
-        
-        
-        
         try {
 
             String content = "This is the content to write into file";
@@ -143,6 +139,6 @@ public class WriteToFileExample {
         }
                 */
         
-        System.out.println(a1.get(0) + " " + a2.get(0) + " " + a3.get(0));
+       // System.out.println(a1.get(0) + " " + a2.get(0) + " " + a3.get(0));
     }
 }
