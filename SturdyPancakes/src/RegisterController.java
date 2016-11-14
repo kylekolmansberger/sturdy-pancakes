@@ -51,7 +51,7 @@ public class RegisterController{
 
             FileWriter fw = new FileWriter(loginFile.getAbsoluteFile());
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(username + " " + password);
+            bw.write(username + "#" + password);
             bw.close();
 
         } catch (IOException e) {
