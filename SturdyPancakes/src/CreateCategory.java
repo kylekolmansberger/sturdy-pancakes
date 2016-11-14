@@ -15,7 +15,7 @@ import javax.swing.*;
  */
 public class CreateCategory extends JPanel 
 {
- private JButton backButton;
+ private JButton createButton, backButton;
  private JLabel label1, label2;
  private JTextField text1, text2;
     public CreateCategory  () 
@@ -42,7 +42,7 @@ public class CreateCategory extends JPanel
         text1 = new JTextField();
         text1.setFont(new Font("Serif",Font.PLAIN, 18));
         c.gridx = 1;   
-        c.gridy = 6;      
+        c.gridy = 2;      
         c.insets = new Insets(0,0,0,0); 
         add(text1,c);
         
@@ -53,6 +53,24 @@ public class CreateCategory extends JPanel
         c.gridy = 3;
         c.insets = new Insets(10,0,0,0); 
         add(label2, c);
+        
+        text2 = new JTextField();
+        text2.setFont(new Font("Serif",Font.PLAIN, 18));
+        c.gridx = 1;   
+        c.gridy = 4;      
+        c.insets = new Insets(0,0,0,0); 
+        add(text2,c);
+        
+        createButton = new JButton("Create");
+        createButton.setFont(new Font("Serif",Font.PLAIN, 20));
+        c.gridx = 1;
+        c.gridy = 5;
+        c.insets = new Insets(0,0,0,0);
+        add(createButton, c);
+        
+        backButton = new JButton("<-Main Menu");
+        backButton.setFont(new Font("Serif",Font.PLAIN, 20));
+        
         
         
     }    
