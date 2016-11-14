@@ -1,3 +1,0 @@
-Facebook username1 password1
-Twitter username2 password2
-Instagram username3 password3
