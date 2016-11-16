@@ -16,6 +16,7 @@ public class GeneratePassword extends JPanel{
     private JButton backButton, generate;
     private JLabel passwordOptions,generatedPassword;
     private JCheckBox numbers, letters, specialChars;
+    private JFormattedTextField length;
     public GeneratePassword(){
         super();
         setVisible(true);
@@ -45,7 +46,7 @@ public class GeneratePassword extends JPanel{
         c.gridy = 0;
         c.insets = new Insets(150,0,0,0);
         add(passwordOptions,c);
-        
+       
         numbers = new JCheckBox("Numbers");
         numbers.setContentAreaFilled(false);
         c.gridwidth = 1;
@@ -68,6 +69,13 @@ public class GeneratePassword extends JPanel{
         c.insets = new Insets(0,0,0,0);
         add(specialChars, c);
         
+        length = new JFormattedTextField();
+        length.setFocusable(true);
+        c.gridx = 1;  
+        c.gridy = 4;
+        c.insets = new Insets(0,0,0,0);
+        add(length, c);
+        
         generatedPassword = new JLabel("");
         c.gridx = 1;  
         c.gridy = 4;
@@ -81,7 +89,7 @@ public class GeneratePassword extends JPanel{
         c.fill = GridBagConstraints.NONE;
         c.anchor = GridBagConstraints.WEST;
         c.gridx = 1;  
-        c.gridy = 5;
+        c.gridy = 6;
         c.insets = new Insets(100,0,100,0);
         add(generate,c);
         
@@ -98,6 +106,9 @@ public class GeneratePassword extends JPanel{
     }
     public JCheckBox getSpecialChars(){
         return specialChars;
+    }
+    public JTextField getLength() {
+        return length;
     }
     public JButton getGenerate(){
         return generate;
