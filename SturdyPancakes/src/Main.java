@@ -12,5 +12,6 @@ public class Main
         MainMenuController mainController = new MainMenuController(model, view);
         GeneratorController generatorController = new GeneratorController(model,view);
         RegisterController registerController = new RegisterController(model,view);
+        CreateCategoryController createCategoryController = new CreateCategoryController(model, view);
     }
 }
