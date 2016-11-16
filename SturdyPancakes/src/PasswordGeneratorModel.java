@@ -90,6 +90,9 @@ public class PasswordGeneratorModel {
     public void setParameters(String parameters){
         this.parameters = parameters;
     }
+    public void setLength(String length) {
+        this.passwordLength = Integer.parseInt(length);
+    }
     public String getGeneratedPassword(){
         return generatedPassword;
     }
