@@ -71,7 +71,24 @@ public class CreateCategory extends JPanel
         backButton = new JButton("<-Main Menu");
         backButton.setFont(new Font("Serif",Font.PLAIN, 20));
         
-        
-        
     }    
+    
+    public JLabel getLabel1 (){
+        return label1;
+    }
+    public JLabel getLabel2 (){
+        return label2;
+    }
+    public JTextField getText1 (){
+        return text1;
+    }
+    public JTextField getText2 (){
+        return text2;
+    }
+    public JButton getCreateButton (){
+        return createButton;
+    }
+    public JButton getBackButton (){
+        return backButton;
+    }
 }

@@ -12,6 +12,7 @@ public class MyJFrame extends JFrame
     private GeneratePassword generatePassword;
     private Settings settings;
     private Register register;
+    private CreateCategory createCategory;
     public MyJFrame(String name)
     {
     super(name);
@@ -23,6 +24,7 @@ public class MyJFrame extends JFrame
         generatePassword = new GeneratePassword();
         settings = new Settings();
         register = new Register();
+        createCategory = new CreateCategory();
         add(welcome);
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -52,7 +54,10 @@ public class MyJFrame extends JFrame
     public Register getRegister(){
         return register;
     }
-   public JFrame getMyJFrame(){
+    public JFrame getMyJFrame(){
        return this;
-   }
+    }
+    public CreateCategory getCreateCategory(){
+        return createCategory;
+    }
 }
