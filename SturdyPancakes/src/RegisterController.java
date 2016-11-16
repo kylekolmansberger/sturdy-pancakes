@@ -40,7 +40,7 @@ public class RegisterController{
                     password = view.getMyJFrame().getRegister().getPassword().getText();
                     
                     try {
-                        loginFile = new File (username + ".txt");
+                        loginFile = new File ("logins.txt");
 
                         // if file doesnt exists, then create it
                         
@@ -51,7 +51,7 @@ public class RegisterController{
 
             FileWriter fw = new FileWriter(loginFile.getAbsoluteFile());
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(password);
+            bw.write(username + "#" + password);
             bw.close();
 
         } catch (IOException e) {
