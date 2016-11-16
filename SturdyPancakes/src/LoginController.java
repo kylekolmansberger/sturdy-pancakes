@@ -48,9 +48,10 @@ public class LoginController {
             public void actionPerformed(ActionEvent event)
             {
                if(event.getSource() == view.getMyJFrame().getLoginScreen().getLoginButton()){
-                   System.out.println(view.getMyJFrame().getLoginScreen().getUsername().getText()+ " " + view.getMyJFrame().getLoginScreen().getPassword().getText());
-                   model.getAuthenticate().setLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ " " + view.getMyJFrame().getLoginScreen().getPassword().getText());
-                   model.getAuthenticate().checkLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ " " + view.getMyJFrame().getLoginScreen().getPassword().getText());
+                   
+                   model.getAuthenticate().setLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "#" + view.getMyJFrame().getLoginScreen().getPassword().getText());
+                   model.getAuthenticate().checkLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "#" + view.getMyJFrame().getLoginScreen().getPassword().getText());
+                   
                    if(model.getAuthenticate().getCheck()==true){
                        view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
                        view.getMyJFrame().revalidate();
@@ -85,8 +86,9 @@ public class LoginController {
                 int action = event.getKeyCode();
                 if(action == event.VK_ENTER)
                 {
-                    model.getAuthenticate().setLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ " " + view.getMyJFrame().getLoginScreen().getPassword().getText());
-                    model.getAuthenticate().checkLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ " " + view.getMyJFrame().getLoginScreen().getPassword().getText());
+                    model.getAuthenticate().setLogin(view.getMyJFrame().getLoginScreen().getUsername().getText().replace(" ", "#")+ "#" + view.getMyJFrame().getLoginScreen().getPassword().getText());
+                    model.getAuthenticate().checkLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "#" + view.getMyJFrame().getLoginScreen().getPassword().getText());
+                    System.out.println(model.getAuthenticate().getLogin());
                     if(model.getAuthenticate().getCheck()==true){
                        view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
                        view.getMyJFrame().revalidate();

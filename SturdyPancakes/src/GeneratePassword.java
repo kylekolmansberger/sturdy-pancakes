@@ -73,10 +73,14 @@ public class GeneratePassword extends JPanel{
         length.setFocusable(true);
         c.gridx = 1;  
         c.gridy = 4;
-        c.insets = new Insets(0,0,0,0);
+        c.ipadx = 150;
+        c.ipady = 25;
+        c.insets = new Insets(0,0,0,00);
         add(length, c);
         
         generatedPassword = new JLabel("");
+        c.ipadx = 0;
+        c.ipady = 60;
         c.gridx = 1;  
         c.gridy = 4;
         c.insets = new Insets(100,0,0,0);

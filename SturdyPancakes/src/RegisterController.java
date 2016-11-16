@@ -37,7 +37,9 @@ public class RegisterController{
                if(event.getSource() == view.getMyJFrame().getRegister().getRegister()){
                    
                     username = view.getMyJFrame().getRegister().getUsername().getText();
+                    username = username.replaceAll(" ", "#");
                     password = view.getMyJFrame().getRegister().getPassword().getText();
+                    
                     
                     try {
                         loginFile = new File ("logins.txt");
@@ -49,16 +51,16 @@ public class RegisterController{
                         }
                        
 
-            FileWriter fw = new FileWriter(loginFile.getAbsoluteFile());
-            BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(username + "#" + password);
-            bw.close();
-
-        } catch (IOException e) {
-            System.out.println("Failed");
-        }
+                        FileWriter fw = new FileWriter(loginFile.getAbsoluteFile());
+                        BufferedWriter bw = new BufferedWriter(fw);
+                        bw.write(username + "#" + password);
+                        bw.close();
+                    } 
+                    catch (IOException e) {
+                        System.out.println("Failed");
+                    }
                     view.getMyJFrame().getRegister().getRegisterStatus().setText("Registered");
-               }
+                }
                if(event.getSource() == view.getMyJFrame().getRegister().getBack()){
                    view.getMyJFrame().setContentPane(view.getMyJFrame().getLoginScreen());
                    view.getMyJFrame().getRegister().getRegisterStatus().setText("");
