@@ -13,6 +13,7 @@ public class MyJFrame extends JFrame
     private Settings settings;
     private Register register;
     private CreateCategory createCategory;
+    private CreateCredentials createCredentials;
     public MyJFrame(String name)
     {
     super(name);
@@ -25,6 +26,7 @@ public class MyJFrame extends JFrame
         settings = new Settings();
         register = new Register();
         createCategory = new CreateCategory();
+        createCredentials = new CreateCredentials();
         add(welcome);
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -59,5 +61,8 @@ public class MyJFrame extends JFrame
     }
     public CreateCategory getCreateCategory(){
         return createCategory;
+    }
+    public CreateCredentials getCreateCredentials(){
+        return createCredentials;
     }
 }

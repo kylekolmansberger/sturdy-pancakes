@@ -1,5 +1,4 @@
 import java.awt.event.*;
-import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,10 +10,10 @@ import javax.swing.JOptionPane;
  *
  * @author kck5178
  */
-public class CreateCategoryController implements Menu {
+public class CreateCredentialsController implements Menu {
     private Model model;
     private View view;
-    public CreateCategoryController (Model a, View b) {
+    public CreateCredentialsController (Model a, View b) {
         model = a;
         view = b;
         menuChoice();
@@ -25,8 +24,8 @@ public class CreateCategoryController implements Menu {
     ActionListener menuChoice = new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent event){
-                if(event.getSource() == view.getMyJFrame().getManagePortfolio().getCreateCategoryButton()){
-                    view.getMyJFrame().setContentPane(view.getMyJFrame().getCreateCategory());
+                if(event.getSource() == view.getMyJFrame().getManagePortfolio().getCreateCredentialsButton()){
+                    view.getMyJFrame().setContentPane(view.getMyJFrame().getCreateCredentials());
                     view.getMyJFrame().revalidate();
                 }
             }
@@ -35,11 +34,11 @@ public class CreateCategoryController implements Menu {
         //Menu choice pressed
         //=======================================================
     
-        view.getMyJFrame().getManagePortfolio().getCreateCategoryButton().addActionListener(menuChoice);
+        view.getMyJFrame().getManagePortfolio().getCreateCredentialsButton().addActionListener(menuChoice);
         ActionListener backButton = new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent event){
-                if(event.getSource() == view.getMyJFrame().getCreateCategory().getBackButton()){
+                if(event.getSource() == view.getMyJFrame().getCreateCredentials().getBackButton()){
                     view.getMyJFrame().setContentPane(view.getMyJFrame().getManagePortfolio());
                     view.getMyJFrame().revalidate();
                 }
@@ -48,7 +47,7 @@ public class CreateCategoryController implements Menu {
         //=======================================================
         //Back Button pressed
         //=======================================================
-        view.getMyJFrame().getCreateCategory().getBackButton().addActionListener(backButton);
+        view.getMyJFrame().getCreateCredentials().getBackButton().addActionListener(backButton);
         
     }
 

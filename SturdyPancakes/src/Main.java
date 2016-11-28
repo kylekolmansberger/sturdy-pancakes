@@ -13,5 +13,6 @@ public class Main
         GeneratorController generatorController = new GeneratorController(model,view);
         RegisterController registerController = new RegisterController(model,view);
         CreateCategoryController createCategoryController = new CreateCategoryController(model, view);
+        CreateCredentialsController createCredentialsController = new CreateCredentialsController(model, view);
     }
 }

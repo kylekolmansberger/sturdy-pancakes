@@ -16,7 +16,7 @@ import javax.swing.*;
 public class CreateCategory extends JPanel 
 {
  private JButton createButton, backButton;
- private JLabel label1, label2;
+ private JLabel label1, label2, blank;
  private JTextField text1, text2;
     public CreateCategory  () 
     {
@@ -26,10 +26,23 @@ public class CreateCategory extends JPanel
         
         c.gridwidth = 1;
         c.gridheight = 1;
+        c.weightx = 1;
+        c.weighty = 1;
+        c.ipady =20;
+        
+        backButton = new JButton("< Main Menu");
+        backButton.setOpaque(false);
+        backButton.setContentAreaFilled(false);
+        c.anchor = GridBagConstraints.NORTHWEST;
+        add(backButton,c);
+        
+        c.gridwidth = 2;
+        c.gridheight = 1;
         c.weightx = .5;
         c.weighty = .5;
         c.fill = GridBagConstraints.BOTH;
         c.ipady = 20;
+        
         
         label1 = new JLabel("Username: ", SwingConstants.CENTER);
         label1.setFont(new Font("Serif",Font.PLAIN, 18));
@@ -43,10 +56,25 @@ public class CreateCategory extends JPanel
         text1.setFont(new Font("Serif",Font.PLAIN, 18));
         c.gridx = 1;   
         c.gridy = 2;      
-        c.insets = new Insets(0,0,0,0); 
-        add(text1,c);
+        c.insets = new Insets(10,0,0,0); 
+        add(text1,c);   
         
-        label2 = new JLabel("Password: ", SwingConstants.CENTER);
+        blank = new JLabel("", SwingConstants.CENTER);
+        blank.setFont(new Font("Serif",Font.PLAIN, 18));
+        blank.setOpaque(false);
+        c.gridx = 2;  
+        c.gridy = 3;
+        c.insets = new Insets(10,0,0,0); 
+        add(blank, c);
+        
+        text2 = new JTextField();
+        text2.setFont(new Font("Serif",Font.PLAIN, 18));
+        c.gridx = 1;   
+        c.gridy = 4;      
+        c.insets = new Insets(10,0,0,0); 
+        add(text2,c);
+        
+         label2 = new JLabel("Password: ", SwingConstants.CENTER);
         label2.setFont(new Font("Serif",Font.PLAIN, 18));
         label2.setOpaque(false);
         c.gridx = 1;  
@@ -54,22 +82,14 @@ public class CreateCategory extends JPanel
         c.insets = new Insets(10,0,0,0); 
         add(label2, c);
         
-        text2 = new JTextField();
-        text2.setFont(new Font("Serif",Font.PLAIN, 18));
-        c.gridx = 1;   
-        c.gridy = 4;      
-        c.insets = new Insets(0,0,0,0); 
-        add(text2,c);
-        
         createButton = new JButton("Create");
         createButton.setFont(new Font("Serif",Font.PLAIN, 20));
         c.gridx = 1;
         c.gridy = 5;
-        c.insets = new Insets(0,0,0,0);
+        c.insets = new Insets(10,0,0,0);
         add(createButton, c);
         
-        backButton = new JButton("<-Main Menu");
-        backButton.setFont(new Font("Serif",Font.PLAIN, 20));
+        
         
     }    
     
@@ -90,5 +110,8 @@ public class CreateCategory extends JPanel
     }
     public JButton getBackButton (){
         return backButton;
+    }
+    public JLabel getBlank (){
+        return blank;
     }
 }
