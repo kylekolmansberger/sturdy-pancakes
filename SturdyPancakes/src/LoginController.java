@@ -49,7 +49,7 @@ public class LoginController {
             public void actionPerformed(ActionEvent event)
             {
                if(event.getSource() == view.getMyJFrame().getLoginScreen().getLoginButton()){
-                   loginFile = new File ("logins.txt");
+                   
                    model.getAuthenticate().setLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "#" + view.getMyJFrame().getLoginScreen().getPassword().getText());
                    model.getAuthenticate().checkLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "#" + view.getMyJFrame().getLoginScreen().getPassword().getText());
                    
