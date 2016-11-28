@@ -1,5 +1,6 @@
 
 import java.awt.event.*;
+import java.io.*;
 import javax.swing.*;
 import javax.swing.ActionMap;
 import java.sql.*;
@@ -48,7 +49,7 @@ public class LoginController {
             public void actionPerformed(ActionEvent event)
             {
                if(event.getSource() == view.getMyJFrame().getLoginScreen().getLoginButton()){
-                   
+                   loginFile = new File ("logins.txt");
                    model.getAuthenticate().setLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "#" + view.getMyJFrame().getLoginScreen().getPassword().getText());
                    model.getAuthenticate().checkLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "#" + view.getMyJFrame().getLoginScreen().getPassword().getText());
                    

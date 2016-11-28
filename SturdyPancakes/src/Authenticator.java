@@ -34,7 +34,6 @@ public class Authenticator {
             
             while (scanner.hasNext()){
                 users.add(scanner.next());
-                
             }
             scanner.close();
         } catch (FileNotFoundException ex) {

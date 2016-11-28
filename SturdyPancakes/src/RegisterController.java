@@ -1,9 +1,6 @@
 
 import java.awt.event.*;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -51,23 +48,27 @@ public class RegisterController{
                         }
                        
 
-                        FileWriter fw = new FileWriter(loginFile.getAbsoluteFile());
-                        BufferedWriter bw = new BufferedWriter(fw);
-                        bw.write(username + "#" + password);
-                        bw.close();
+                        FileWriter fw = new FileWriter(loginFile,true);
+                        PrintWriter pw = new PrintWriter(fw);
+                        pw.write(" " +username + "#" + password + " ");
+                        pw.close();
                     } 
                     catch (IOException e) {
                         System.out.println("Failed");
                     }
                     view.getMyJFrame().getRegister().getRegisterStatus().setText("Registered");
                 }
-               if(event.getSource() == view.getMyJFrame().getRegister().getBack()){
-                   view.getMyJFrame().setContentPane(view.getMyJFrame().getLoginScreen());
-                   view.getMyJFrame().getRegister().getRegisterStatus().setText("");
+                    if(event.getSource() == view.getMyJFrame().getRegister().getBack()){
+                    view.getMyJFrame().setContentPane(view.getMyJFrame().getLoginScreen());
+                    view.getMyJFrame().getRegister().getRegisterStatus().setText("");
                }
             }
         };
         view.getMyJFrame().getRegister().getRegister().addActionListener(register);
         view.getMyJFrame().getRegister().getBack().addActionListener(register);
+    }
+    
+    public void setLogins(File logins){
+        this.loginFile = logins;
     }
 }
