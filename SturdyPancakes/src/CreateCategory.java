@@ -15,9 +15,9 @@ import javax.swing.*;
  */
 public class CreateCategory extends JPanel 
 {
- private JButton createButton, backButton;
- private JLabel label1, label2, blank;
- private JTextField text1, text2;
+ private JButton createButton, backButton, editButton;
+ private JLabel label1 ;
+ private JTextField text1;
     public CreateCategory  () 
     {
         setLayout(new GridBagLayout());
@@ -28,6 +28,7 @@ public class CreateCategory extends JPanel
         c.gridheight = 1;
         c.weightx = 1;
         c.weighty = 1;
+        c.ipadx = 0;
         c.ipady =20;
         
         backButton = new JButton("< Main Menu");
@@ -36,82 +37,59 @@ public class CreateCategory extends JPanel
         c.anchor = GridBagConstraints.NORTHWEST;
         add(backButton,c);
         
-        c.gridwidth = 2;
-        c.gridheight = 1;
-        c.weightx = .5;
-        c.weighty = .5;
-        c.fill = GridBagConstraints.BOTH;
-        c.ipady = 20;
-        
-        
-        label1 = new JLabel("Username: ", SwingConstants.CENTER);
+        label1 = new JLabel("Category Name:", SwingConstants.CENTER);
         label1.setFont(new Font("Serif",Font.PLAIN, 18));
         label1.setOpaque(false);
-        c.gridx = 1;  
-        c.gridy = 1;
-        c.insets = new Insets(10,0,0,0); 
+        c.gridx = 1;
+        c.gridy = 0;
+        c.insets = new Insets(350,0,0,0); 
         add(label1, c);
         
         text1 = new JTextField();
         text1.setFont(new Font("Serif",Font.PLAIN, 18));
         c.gridx = 1;   
-        c.gridy = 2;      
-        c.insets = new Insets(10,0,0,0); 
-        add(text1,c);   
+        c.gridy = 1;
+        c.ipadx = 150;
+        c.ipady = 25;
+        c.insets = new Insets(0,0,0,0); 
+        add(text1,c);
         
-        blank = new JLabel("", SwingConstants.CENTER);
-        blank.setFont(new Font("Serif",Font.PLAIN, 18));
-        blank.setOpaque(false);
-        c.gridx = 2;  
-        c.gridy = 3;
-        c.insets = new Insets(10,0,0,0); 
-        add(blank, c);
+        c.ipadx = 0;
+        c.ipady =20;
         
-        text2 = new JTextField();
-        text2.setFont(new Font("Serif",Font.PLAIN, 18));
-        c.gridx = 1;   
-        c.gridy = 4;      
-        c.insets = new Insets(10,0,0,0); 
-        add(text2,c);
-        
-         label2 = new JLabel("Password: ", SwingConstants.CENTER);
-        label2.setFont(new Font("Serif",Font.PLAIN, 18));
-        label2.setOpaque(false);
-        c.gridx = 1;  
-        c.gridy = 3;
-        c.insets = new Insets(10,0,0,0); 
-        add(label2, c);
-        
-        createButton = new JButton("Create");
-        createButton.setFont(new Font("Serif",Font.PLAIN, 20));
+        createButton = new JButton("Create Category");
+        createButton.setOpaque(false);
+        createButton.setContentAreaFilled(false);
         c.gridx = 1;
-        c.gridy = 5;
-        c.insets = new Insets(10,0,0,0);
-        add(createButton, c);
+        c.gridy = 2;
+        c.insets = new Insets(0,0,0,0);
+        add(createButton,c);
         
         
+        editButton = new JButton("Edit Existing Category");
+        editButton.setOpaque(false);
+        editButton.setContentAreaFilled(false);
+        c.gridx = 1;
+        c.gridy = 3;
+        c.insets = new Insets(100,0,0,0);
+        add(editButton,c);
         
-    }    
+        
+    } 
     
-    public JLabel getLabel1 (){
-        return label1;
-    }
-    public JLabel getLabel2 (){
-        return label2;
-    }
-    public JTextField getText1 (){
-        return text1;
-    }
-    public JTextField getText2 (){
-        return text2;
-    }
-    public JButton getCreateButton (){
-        return createButton;
-    }
-    public JButton getBackButton (){
+    public JButton getBackButton() {
         return backButton;
     }
-    public JLabel getBlank (){
-        return blank;
+    public JLabel getLabel1(){
+        return label1;
     }
+    public JTextField getText1(){
+        return text1;
+    }
+    public JButton getCreateButton(){
+        return createButton;
+    }
+    public JButton getEditButton(){
+        return editButton;
+    } 
 }

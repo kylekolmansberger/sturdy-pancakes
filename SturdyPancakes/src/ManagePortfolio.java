@@ -39,28 +39,21 @@ public class ManagePortfolio extends JPanel{
    
         c.gridx = 1;
         c.gridy = 0;
-        createCategoryButton = new JButton("Create Category");
+        createCategoryButton = new JButton("Create/Edit Categories");
         createCategoryButton.setOpaque(false);
         createCategoryButton.setContentAreaFilled(false);
         add(createCategoryButton,c);
         
+        
         c.gridx = 1;
         c.gridy = 1;
-        editCategoryButton = new JButton("Edit Category");
-        editCategoryButton.setOpaque(false);
-        editCategoryButton.setContentAreaFilled(false);
-        
-        add(editCategoryButton,c);
-        
-        c.gridx = 1;
-        c.gridy = 2;
         createCredentialsButton = new JButton("Create Credentials");
         createCredentialsButton.setOpaque(false);
         createCredentialsButton.setContentAreaFilled(false);
         add(createCredentialsButton,c);
         
         c.gridx = 1;
-        c.gridy = 3;
+        c.gridy = 2;
         editCredentialsButton = new JButton("Edit Credentials");
         editCredentialsButton.setOpaque(false); 
         editCredentialsButton.setContentAreaFilled(false);
