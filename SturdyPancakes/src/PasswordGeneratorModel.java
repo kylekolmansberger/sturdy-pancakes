@@ -19,7 +19,7 @@ public class PasswordGeneratorModel {
     private int passwordLength;
     
     public PasswordGeneratorModel() {
-        passwordLength = 0;
+        passwordLength = 10000;
         generatedChar = new char[passwordLength];
         generatedPassword = "";
         choices = new char[3];
@@ -33,42 +33,43 @@ public class PasswordGeneratorModel {
         r = new Random();
     }
     public void Generator(){
+        generatedPassword = "";
+        generatedChar = new char[passwordLength];
         if(parameters.equals("t--")) {
-            for(int i=0;i<passwordLength;i++){
+            for(int i=1;i<passwordLength;i++){
                 generatedChar[i] = numbers.charAt(r.nextInt(numbers.length()));
             }
         }
         else if(parameters.equals("-t-")) {
-            for(int i=0;i<passwordLength;i++){
+            for(int i=1;i<passwordLength;i++){
                 generatedChar[i] = alphabet.charAt(r.nextInt(alphabet.length()));
             }
         }
         else if(parameters.equals("--t")) {
-            for(int i=0;i<passwordLength;i++){
+            for(int i=1;i<passwordLength;i++){
                 generatedChar[i] = specialChars.charAt(r.nextInt(specialChars.length()));
             }
         }
         else if(parameters.equals("tt-")) {
-            for(int i=0;i<passwordLength;i++){
+            for(int i=1;i<passwordLength;i++){
                 String temp = numbers+alphabet;
                 generatedChar[i] = temp.charAt(r.nextInt(temp.length()));
             }
         }
         else if(parameters.equals("t-t")) {
-            for(int i=0;i<passwordLength;i++){
+            for(int i=1;i<passwordLength;i++){
                 String temp = numbers+specialChars;
                 generatedChar[i] = temp.charAt(r.nextInt(temp.length()));
             }
         }
         else if(parameters.equals("-tt")) {
-            for(int i=0;i<passwordLength;i++){
+            for(int i=1;i<passwordLength;i++){
                 String temp = alphabet+specialChars;
                 generatedChar[i] = temp.charAt(r.nextInt(temp.length()));
-            }            
-            
+            }         
         }
         else if(parameters.equals("ttt")) {
-            for(int i=0;i<passwordLength;i++){
+            for(int i=1;i<passwordLength;i++){
                 String temp = numbers+alphabet+specialChars;
                 generatedChar[i] = temp.charAt(r.nextInt(temp.length()));
             }            
@@ -90,10 +91,11 @@ public class PasswordGeneratorModel {
     public void setParameters(String parameters){
         this.parameters = parameters;
     }
-    public void setLength(String length) {
-        this.passwordLength = Integer.parseInt(length);
+    public void setLength(int length) {
+        this.passwordLength = length;
     }
     public String getGeneratedPassword(){
         return generatedPassword;
     }
+    
 }
