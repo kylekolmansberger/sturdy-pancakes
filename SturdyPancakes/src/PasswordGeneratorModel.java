@@ -27,7 +27,7 @@ public class PasswordGeneratorModel {
         choices[1] = '-';
         choices[2] = '-';
         parameters = "";
-        alphabet = "abcdefghijklmnopqrstuvwxyz";
+        alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         numbers = "0123456789";
         specialChars = "!@#$%^&*()?.";
         r = new Random();
