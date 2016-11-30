@@ -75,7 +75,6 @@ public class GeneratorController {
                    model.getGenerator().setLength(Integer.parseInt(view.getMyJFrame().getGeneratePassword().getLength().getText())+1);
                     model.getGenerator().Generator();
                     view.getMyJFrame().getGeneratePassword().getGeneratedPassword().setText("Password: " + model.getGenerator().getGeneratedPassword());
-                    
                 }
             }
         };
