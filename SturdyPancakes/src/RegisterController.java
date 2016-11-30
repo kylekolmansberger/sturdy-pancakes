@@ -47,7 +47,6 @@ public class RegisterController{
                             loginFile.createNewFile();
                         }
                        
-
                         FileWriter fw = new FileWriter(loginFile,true);
                         PrintWriter pw = new PrintWriter(fw);
                         pw.write(" " +username + "#" + password + " ");
@@ -66,9 +65,5 @@ public class RegisterController{
         };
         view.getMyJFrame().getRegister().getRegister().addActionListener(register);
         view.getMyJFrame().getRegister().getBack().addActionListener(register);
-    }
-    
-    public void setLogins(File logins){
-        this.loginFile = logins;
     }
 }
