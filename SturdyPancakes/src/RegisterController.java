@@ -36,17 +36,19 @@ public class RegisterController{
                     username = view.getMyJFrame().getRegister().getUsername().getText();
                     username = username.replaceAll(" ", "#");
                     password = view.getMyJFrame().getRegister().getPassword().getText();
-                    
-                    
+                    new File("SuperSecretStuff/"+username).mkdir();
                     try {
-                        loginFile = new File ("logins.txt");
-
+                        loginFile = new File ("SuperSecretStuff/logins.txt");
+                        
                         // if file doesnt exists, then create it
                         
                         if (!loginFile.exists()) {
                             loginFile.createNewFile();
+                            
                         }
                        
+                        
+                        
                         FileWriter fw = new FileWriter(loginFile,true);
                         PrintWriter pw = new PrintWriter(fw);
                         pw.write(" " +username + "#" + password + " ");
@@ -56,11 +58,14 @@ public class RegisterController{
                         System.out.println("Failed");
                     }
                     view.getMyJFrame().getRegister().getRegisterStatus().setText("Registered");
+                    view.getMyJFrame().getRegister().getUsername().setText("");
+                    view.getMyJFrame().getRegister().getPassword().setText("");
+                    
                 }
-                    if(event.getSource() == view.getMyJFrame().getRegister().getBack()){
+                if(event.getSource() == view.getMyJFrame().getRegister().getBack()){
                     view.getMyJFrame().setContentPane(view.getMyJFrame().getLoginScreen());
                     view.getMyJFrame().getRegister().getRegisterStatus().setText("");
-               }
+                }
             }
         };
         view.getMyJFrame().getRegister().getRegister().addActionListener(register);

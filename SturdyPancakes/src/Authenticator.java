@@ -24,13 +24,8 @@ public class Authenticator {
             login = new String();
             users = new ArrayList<>();
             check =  false;
-            /*users.add("Frank Liang password");
-            users.add("Danny Khouri password");
-            users.add("Nada Ziab password");
-            users.add("Kyle Kolmansberger password");
-            users.add("Test User password");
-            */
-            Scanner scanner = new Scanner(new File("logins.txt"));
+            
+            Scanner scanner = new Scanner(new File("SuperSecretStuff/logins.txt"));
             
             while (scanner.hasNext()){
                 users.add(scanner.next());
