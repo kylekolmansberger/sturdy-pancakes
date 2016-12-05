@@ -11,9 +11,9 @@ import javax.swing.*;
  *
  * @author Frank
  */
-public class Settings extends JPanel{
+public class SearchSort extends JPanel{
     private JButton backButton;
-    public Settings(){
+    public SearchSort(){
         super();
         setVisible(true);
         setBackground(Color.white);

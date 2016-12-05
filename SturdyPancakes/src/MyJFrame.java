@@ -10,7 +10,7 @@ public class MyJFrame extends JFrame
     private MainMenu mainMenu;
     private ManagePortfolio managePortfolio;
     private GeneratePassword generatePassword;
-    private Settings settings;
+    private SearchSort searchsort;
     private Register register;
     private CreateCategory createCategory;
     private CreateCredentials createCredentials;
@@ -23,7 +23,7 @@ public class MyJFrame extends JFrame
         mainMenu = new MainMenu();
         managePortfolio = new ManagePortfolio();
         generatePassword = new GeneratePassword();
-        settings = new Settings();
+        searchsort = new SearchSort();
         register = new Register();
         createCategory = new CreateCategory();
         createCredentials = new CreateCredentials();
@@ -50,8 +50,8 @@ public class MyJFrame extends JFrame
     public GeneratePassword getGeneratePassword(){
         return generatePassword;
     }
-    public Settings getSettings(){
-        return settings;
+    public SearchSort getSearchSort(){
+        return searchsort;
     }
     public Register getRegister(){
         return register;
