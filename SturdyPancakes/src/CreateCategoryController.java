@@ -65,7 +65,7 @@ public class CreateCategoryController implements Menu {
             public void actionPerformed(ActionEvent event) {
 
                 if (event.getSource() == view.getMyJFrame().getCreateCategory().getCreateButton()) {
-                    username = view.getMyJFrame().getLoginScreen().getUsername().getText();
+                    username = view.getMyJFrame().getCreateCategory().getUsername().getText();
                     categoryName = view.getMyJFrame().getCreateCategory().getCategoryName().getText();
 
                     //new File("SuperSecretStuff/" + username + "/" + categoryName).mkdir();
@@ -88,12 +88,13 @@ public class CreateCategoryController implements Menu {
                         System.out.println("Failed");
                     }
                 }
+                view.getMyJFrame().getCreateCategory().getCreateStatus().setText("Created");
             }
         };
         //=======================================================
         //Create Category button pressed
         //=======================================================
-        view.getMyJFrame().getManagePortfolio().getCreateCategoryButton().addActionListener(categorySave);
+        view.getMyJFrame().getCreateCategory().getCreateButton().addActionListener(categorySave);
         
     }
 

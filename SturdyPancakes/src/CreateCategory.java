@@ -16,8 +16,8 @@ import javax.swing.*;
 public class CreateCategory extends JPanel 
 {
  private JButton createButton, backButton, editButton;
- private JLabel label1 ;
- private JTextField categoryName;
+ private JLabel label1, label2, createStatus ;
+ private JTextField categoryName, username;
     public CreateCategory  () 
     {
         setLayout(new GridBagLayout());
@@ -37,22 +37,41 @@ public class CreateCategory extends JPanel
         c.anchor = GridBagConstraints.NORTHWEST;
         add(backButton,c);
         
-        label1 = new JLabel("Category Name:", SwingConstants.CENTER);
+        label2 = new JLabel("Username:", SwingConstants.CENTER);
+        label2.setFont(new Font("Serif",Font.PLAIN, 18));
+        label2.setOpaque(false);
+        c.gridx = 1;
+        c.gridy = 1;
+        c.insets = new Insets(300,0,0,0); 
+        add(label2, c);
+        
+        username = new JTextField();
+        username.setFont(new Font("Serif",Font.PLAIN, 18));
+        c.gridx = 1;   
+        c.gridy = 2;
+        c.ipadx = 150;
+        c.ipady = 25;
+        c.insets = new Insets(0,0,0,0); 
+        add(username,c);
+        
+        label1 = new JLabel("Category Name:", SwingConstants.LEFT);
         label1.setFont(new Font("Serif",Font.PLAIN, 18));
         label1.setOpaque(false);
         c.gridx = 1;
-        c.gridy = 0;
-        c.insets = new Insets(350,0,0,0); 
+        c.gridy = 3;
+        c.insets = new Insets(20,0,0,0); 
         add(label1, c);
         
         categoryName = new JTextField();
         categoryName.setFont(new Font("Serif",Font.PLAIN, 18));
         c.gridx = 1;   
-        c.gridy = 1;
+        c.gridy = 4;
         c.ipadx = 150;
         c.ipady = 25;
         c.insets = new Insets(0,0,0,0); 
         add(categoryName,c);
+        
+        
         
         c.ipadx = 0;
         c.ipady =20;
@@ -61,17 +80,22 @@ public class CreateCategory extends JPanel
         createButton.setOpaque(false);
         createButton.setContentAreaFilled(false);
         c.gridx = 1;
-        c.gridy = 2;
-        c.insets = new Insets(0,0,0,0);
+        c.gridy = 5;
+        c.insets = new Insets(20,0,0,0);
         add(createButton,c);
         
+        createStatus = new JLabel("",SwingConstants.CENTER);
+        c.gridx = 1;
+        c.gridy = 6;      
+        c.insets = new Insets(0,0,0,0); 
+        add(createStatus,c);
         
         editButton = new JButton("Edit Existing Category");
         editButton.setOpaque(false);
         editButton.setContentAreaFilled(false);
         c.gridx = 1;
-        c.gridy = 3;
-        c.insets = new Insets(100,0,0,0);
+        c.gridy = 7;
+        c.insets = new Insets(10,0,20,0);
         add(editButton,c);
         
         
@@ -83,8 +107,17 @@ public class CreateCategory extends JPanel
     public JLabel getLabel1(){
         return label1;
     }
+    public JLabel getLabel2(){
+        return label2;
+    }
+    public JLabel getCreateStatus(){
+        return createStatus;
+    }
     public JTextField getCategoryName(){
         return categoryName;
+    }
+    public JTextField getUsername(){
+        return username;
     }
     public JButton getCreateButton(){
         return createButton;
@@ -92,4 +125,5 @@ public class CreateCategory extends JPanel
     public JButton getEditButton(){
         return editButton;
     } 
+    
 }
