@@ -17,7 +17,7 @@ public class CreateCategory extends JPanel
 {
  private JButton createButton, backButton, editButton;
  private JLabel label1 ;
- private JTextField text1;
+ private JTextField categoryName;
     public CreateCategory  () 
     {
         setLayout(new GridBagLayout());
@@ -45,14 +45,14 @@ public class CreateCategory extends JPanel
         c.insets = new Insets(350,0,0,0); 
         add(label1, c);
         
-        text1 = new JTextField();
-        text1.setFont(new Font("Serif",Font.PLAIN, 18));
+        categoryName = new JTextField();
+        categoryName.setFont(new Font("Serif",Font.PLAIN, 18));
         c.gridx = 1;   
         c.gridy = 1;
         c.ipadx = 150;
         c.ipady = 25;
         c.insets = new Insets(0,0,0,0); 
-        add(text1,c);
+        add(categoryName,c);
         
         c.ipadx = 0;
         c.ipady =20;
@@ -83,8 +83,8 @@ public class CreateCategory extends JPanel
     public JLabel getLabel1(){
         return label1;
     }
-    public JTextField getText1(){
-        return text1;
+    public JTextField getCategoryName(){
+        return categoryName;
     }
     public JButton getCreateButton(){
         return createButton;
