@@ -16,8 +16,8 @@ import javax.swing.*;
 public class CreateCredentials extends JPanel 
 {
  private JButton createButton, backButton;
- private JLabel label1, label2, label3;
- private JTextField text1, text2, text3;
+ private JLabel label1, label2, label3, label4;
+ private JTextField username, password, credentialName, category;
     public CreateCredentials  () 
     {
         setLayout(new GridBagLayout());
@@ -48,20 +48,20 @@ public class CreateCredentials extends JPanel
         c.insets = new Insets(0,50,0,0); 
         add(label1, c);
         
-        text1 = new JTextField();
-        text1.setFont(new Font("Serif",Font.PLAIN, 18));
+        username = new JTextField();
+        username.setFont(new Font("Serif",Font.PLAIN, 18));
         c.gridx = 1;   
         c.gridy = 4;      
         c.insets = new Insets(0,0,0,0); 
-        add(text1,c);   
+        add(username,c);   
         
       
-        text2 = new JTextField();
-        text2.setFont(new Font("Serif",Font.PLAIN, 18));
+        password = new JTextField();
+        password.setFont(new Font("Serif",Font.PLAIN, 18));
         c.gridx = 1;   
         c.gridy = 6;      
         c.insets = new Insets(0,0,0,0); 
-        add(text2,c);
+        add(password,c);
         
          label2 = new JLabel("Password: ", SwingConstants.LEFT);
         label2.setFont(new Font("Serif",Font.PLAIN, 18));
@@ -79,17 +79,32 @@ public class CreateCredentials extends JPanel
         c.insets = new Insets(350,30,0,0);
         add(label3, c);
         
-        text3 = new JTextField();
-        text3.setFont(new Font("Serif",Font.PLAIN, 18));
+        credentialName = new JTextField();
+        credentialName.setFont(new Font("Serif",Font.PLAIN, 18));
         c.gridx = 1;
         c.gridy = 2;
         c.insets = new Insets(0,0,0,0);
-        add(text3, c);
+        add(credentialName, c);
+        
+        label4 = new JLabel("Category Name:", SwingConstants.LEFT);
+        label4.setFont(new Font("Serif",Font.PLAIN, 18));
+        label4.setOpaque(false);
+        c.gridx = 1;
+        c.gridy = 7;
+        c.insets = new Insets(0,50,0,0);
+        add(label4, c);
          
+        category = new JTextField();
+        category.setFont(new Font("Serif",Font.PLAIN, 18));
+        c.gridx = 1;
+        c.gridy = 8;
+        c.insets = new Insets(0,0,0,0);
+        add(category, c);
+        
         createButton = new JButton("Create");
         createButton.setFont(new Font("Serif",Font.PLAIN, 20));
         c.gridx = 1;
-        c.gridy = 7;
+        c.gridy = 9;
         c.ipadx = 100;
         c.insets = new Insets(0,0,0,0);
         add(createButton, c);
@@ -107,14 +122,20 @@ public class CreateCredentials extends JPanel
     public JLabel getLabel3 (){
         return label3;
     }
-    public JTextField getText1 (){
-        return text1;
+    public JLabel getLabel4 (){
+        return label4;
     }
-    public JTextField getText2 (){
-        return text2;
+    public JTextField getUsername (){
+        return username;
     }
-    public JTextField getText3 (){
-        return text3;
+    public JTextField getPassword (){
+        return password;
+    }
+    public JTextField getCredentialName (){
+        return credentialName;
+    }
+    public JTextField getCategory(){
+        return category;
     }
     public JButton getCreateButton (){
         return createButton;
