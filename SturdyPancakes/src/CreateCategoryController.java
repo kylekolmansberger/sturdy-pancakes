@@ -20,7 +20,7 @@ public class CreateCategoryController implements Menu {
     private Model model;
     private View view;
 
-    String username, categoryName;
+    String profileName, username, categoryName;
     private File categoryFile;
 
     public CreateCategoryController(Model a, View b) {
@@ -28,7 +28,7 @@ public class CreateCategoryController implements Menu {
         view = b;
         menuChoice();
     }
-
+    
     private void menuChoice() {
 
         ActionListener menuChoice = new ActionListener() {
@@ -65,12 +65,11 @@ public class CreateCategoryController implements Menu {
             public void actionPerformed(ActionEvent event) {
 
                 if (event.getSource() == view.getMyJFrame().getCreateCategory().getCreateButton()) {
-                    username = view.getMyJFrame().getCreateCategory().getUsername().getText();
+                    profileName = view.getMyJFrame().getProfileNameAccess().getProfileName();
                     categoryName = view.getMyJFrame().getCreateCategory().getCategoryName().getText();
 
-                    //new File("SuperSecretStuff/" + username + "/" + categoryName).mkdir();
                     try {
-                        categoryFile = new File("SuperSecretStuff/" + username + "/" + categoryName + ".txt");
+                        categoryFile = new File("SuperSecretStuff/" + profileName + "/" + categoryName + ".txt");
 
                         // if file doesnt exists, then create it
                         if (!categoryFile.exists()) {
@@ -78,12 +77,6 @@ public class CreateCategoryController implements Menu {
 
                         }
 
-                        /*
-                         FileWriter fw = new FileWriter(categoryFile, true);
-                         PrintWriter pw = new PrintWriter(fw);
-                         pw.write(" " + username + "#" + password + " ");
-                         pw.close();
-                         */
                     } catch (IOException e) {
                         System.out.println("Failed");
                     }

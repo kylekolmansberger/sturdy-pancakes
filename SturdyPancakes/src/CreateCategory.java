@@ -37,6 +37,7 @@ public class CreateCategory extends JPanel
         c.anchor = GridBagConstraints.NORTHWEST;
         add(backButton,c);
         
+        /*
         label2 = new JLabel("Username:", SwingConstants.CENTER);
         label2.setFont(new Font("Serif",Font.PLAIN, 18));
         label2.setOpaque(false);
@@ -53,6 +54,7 @@ public class CreateCategory extends JPanel
         c.ipady = 25;
         c.insets = new Insets(0,0,0,0); 
         add(username,c);
+        */
         
         label1 = new JLabel("Category Name:", SwingConstants.LEFT);
         label1.setFont(new Font("Serif",Font.PLAIN, 18));

@@ -50,10 +50,13 @@ public class LoginController {
             {
                if(event.getSource() == view.getMyJFrame().getLoginScreen().getLoginButton()){
                    
+                   
+                   
                    model.getAuthenticate().setLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "#" + view.getMyJFrame().getLoginScreen().getPassword().getText());
                    model.getAuthenticate().checkLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "#" + view.getMyJFrame().getLoginScreen().getPassword().getText());
                    
                    if(model.getAuthenticate().getCheck()==true){
+                       view.getMyJFrame().getProfileNameAccess().setProfileName(view.getMyJFrame().getLoginScreen().getUsername().getText());
                        view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
                        view.getMyJFrame().revalidate();
                        view.getMyJFrame().getLoginScreen().getUsername().setText("");
@@ -91,6 +94,7 @@ public class LoginController {
                     model.getAuthenticate().checkLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "#" + view.getMyJFrame().getLoginScreen().getPassword().getText());
                     System.out.println(model.getAuthenticate().getLogin());
                     if(model.getAuthenticate().getCheck()==true){
+                       view.getMyJFrame().getProfileNameAccess().setProfileName(view.getMyJFrame().getLoginScreen().getUsername().getText());
                        view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
                        view.getMyJFrame().revalidate();
                        view.getMyJFrame().getLoginScreen().getUsername().setText("");

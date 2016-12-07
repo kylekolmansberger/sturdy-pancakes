@@ -18,7 +18,7 @@ public class CreateCredentialsController implements Menu {
     private Model model;
     private View view;
     
-    String credentialName, username, password, category;
+    String credentialName, username, password, category, profileName;
     
     public CreateCredentialsController (Model a, View b) {
         model = a;
@@ -66,10 +66,10 @@ public class CreateCredentialsController implements Menu {
                     username = view.getMyJFrame().getCreateCredentials().getUsername().getText();
                     password = view.getMyJFrame().getCreateCredentials().getPassword().getText();
                     category = view.getMyJFrame().getCreateCredentials().getCategory().getText();
+                    profileName = view.getMyJFrame().getProfileNameAccess().getProfileName();
                     
                     
-                    
-                    File file = new File("SuperSecretStuff/" + category + ".txt");
+                    File file = new File("SuperSecretStuff/" + profileName + "/" +  category + ".txt");
                 
                     try {
             
@@ -90,6 +90,12 @@ public class CreateCredentialsController implements Menu {
             }
             
         };
+        
+        //=======================================================
+        //Create Credential Button pressed
+        //=======================================================
+        view.getMyJFrame().getCreateCredentials().getCreateButton().addActionListener(createCredential);
+        
     }
 
     @Override
