@@ -10,11 +10,12 @@ public class MyJFrame extends JFrame
     private MainMenu mainMenu;
     private ManagePortfolio managePortfolio;
     private GeneratePassword generatePassword;
-    private SearchSort searchsort;
+    private ViewPortfolio viewPortfolio;
     private Register register;
     private CreateCategory createCategory;
     private CreateCredentials createCredentials;
     private ProfileNameAccess profileNameAccess;
+    private SavedPortfolios savedPortfolios;
     public MyJFrame(String name)
     {
     super(name);
@@ -24,11 +25,12 @@ public class MyJFrame extends JFrame
         mainMenu = new MainMenu();
         managePortfolio = new ManagePortfolio();
         generatePassword = new GeneratePassword();
-        searchsort = new SearchSort();
+        viewPortfolio = new ViewPortfolio();
         register = new Register();
         createCategory = new CreateCategory();
         createCredentials = new CreateCredentials();
         profileNameAccess = new ProfileNameAccess();
+        savedPortfolios = new SavedPortfolios();
         add(welcome);
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -52,8 +54,8 @@ public class MyJFrame extends JFrame
     public GeneratePassword getGeneratePassword(){
         return generatePassword;
     }
-    public SearchSort getSearchSort(){
-        return searchsort;
+    public ViewPortfolio getViewPortfolio(){
+        return viewPortfolio;
     }
     public Register getRegister(){
         return register;
@@ -69,5 +71,8 @@ public class MyJFrame extends JFrame
     }
     public ProfileNameAccess getProfileNameAccess() {
         return profileNameAccess;
+    }
+    public SavedPortfolios getSavedPortfolios() {
+        return savedPortfolios;
     }
 }

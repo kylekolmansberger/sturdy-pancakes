@@ -37,7 +37,7 @@ public class MainMenuController implements Menu{
                     view.getMyJFrame().revalidate();
                 }
                 if(event.getSource() == view.getMyJFrame().getMainMenu().getB3()){
-                    view.getMyJFrame().setContentPane(view.getMyJFrame().getSearchSort());
+                    view.getMyJFrame().setContentPane(view.getMyJFrame().getViewPortfolio());
                     view.getMyJFrame().revalidate();
                 }
             }
@@ -56,7 +56,7 @@ public class MainMenuController implements Menu{
                     view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
                     view.getMyJFrame().revalidate();
                 }
-                if (event.getSource() == view.getMyJFrame().getSearchSort().getBackButton()){
+                if (event.getSource() == view.getMyJFrame().getViewPortfolio().getBackButton()){
                     view.getMyJFrame().setContentPane(view.getMyJFrame().getMainMenu());
                     view.getMyJFrame().revalidate();
                 }
@@ -83,7 +83,7 @@ public class MainMenuController implements Menu{
         view.getMyJFrame().getMainMenu().getBackButton().addActionListener(backButton);
         view.getMyJFrame().getManagePortfolio().getBackButton().addActionListener(backButton);
         view.getMyJFrame().getGeneratePassword().getBackButton().addActionListener(backButton);
-        view.getMyJFrame().getSearchSort().getBackButton().addActionListener(backButton);
+        view.getMyJFrame().getViewPortfolio().getBackButton().addActionListener(backButton);
     }
             
                    

@@ -52,7 +52,7 @@ public class MainMenu extends JPanel{
         c.gridy = 3;
         add(b2, c);
         
-        b3 = new JButton("Search and Sort");
+        b3 = new JButton("View Portfolio");
         b3.setFont(new Font("Serif",Font.PLAIN, 18));
         b3.setOpaque(false);
         b3.setContentAreaFilled(false);
