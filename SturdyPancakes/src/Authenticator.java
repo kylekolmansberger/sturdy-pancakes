@@ -18,14 +18,16 @@ public class Authenticator {
     private String login;
     private ArrayList<String> users;
     private Boolean check;
+    private File logins;
     
     public Authenticator(){
+        logins = new File("SuperSecretStuff/logins.txt");
         try {
             login = new String();
             users = new ArrayList<>();
             check =  false;
             
-            Scanner scanner = new Scanner(new File("SuperSecretStuff/logins.txt"));
+            Scanner scanner = new Scanner(logins);
             
             while (scanner.hasNext()){
                 users.add(scanner.next());
@@ -56,5 +58,8 @@ public class Authenticator {
     }
     public Boolean getCheck(){
         return check;
+    }
+    public ArrayList<String> getUsers(){
+        return users;
     }
 }

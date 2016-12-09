@@ -23,9 +23,6 @@ public class Register extends JPanel{
         setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         
-        
-        
-        
         c.gridwidth = 0;
         c.gridheight = 1;
         c.weightx = 1;

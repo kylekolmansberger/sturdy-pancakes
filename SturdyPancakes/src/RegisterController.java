@@ -47,8 +47,6 @@ public class RegisterController{
                             
                         }
                        
-                        
-                        
                         FileWriter fw = new FileWriter(loginFile,true);
                         PrintWriter pw = new PrintWriter(fw);
                         pw.write(" " +username + "#" + password + " ");
@@ -57,6 +55,10 @@ public class RegisterController{
                     catch (IOException e) {
                         System.out.println("Failed");
                     }
+                    
+                    model.getAuthenticate().getUsers().add(username+"#"+password);
+                    System.out.println( model.getAuthenticate().getUsers());
+                    
                     view.getMyJFrame().getRegister().getRegisterStatus().setText("Registered");
                     view.getMyJFrame().getRegister().getUsername().setText("");
                     view.getMyJFrame().getRegister().getPassword().setText("");
@@ -71,4 +73,5 @@ public class RegisterController{
         view.getMyJFrame().getRegister().getRegister().addActionListener(register);
         view.getMyJFrame().getRegister().getBack().addActionListener(register);
     }
+    
 }
