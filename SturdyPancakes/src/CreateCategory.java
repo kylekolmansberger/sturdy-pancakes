@@ -61,7 +61,7 @@ public class CreateCategory extends JPanel
         label1.setOpaque(false);
         c.gridx = 1;
         c.gridy = 3;
-        c.insets = new Insets(20,0,0,0); 
+        c.insets = new Insets(300,0,0,0); 
         add(label1, c);
         
         categoryName = new JTextField();
