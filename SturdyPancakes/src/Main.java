@@ -14,6 +14,8 @@ public class Main
         RegisterController registerController = new RegisterController(model,view);
         CreateCategoryController createCategoryController = new CreateCategoryController(model, view);
         CreateCredentialsController createCredentialsController = new CreateCredentialsController(model, view);
+        EditCategoryController editCategoryController = new EditCategoryController(model, view);
+        DeleteCategoryController deleteCategoryController = new DeleteCategoryController(model, view);
         ViewPortfolioController viewPortfolioController = new ViewPortfolioController(model, view);
     }
 }

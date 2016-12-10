@@ -14,6 +14,8 @@ public class MyJFrame extends JFrame
     private Register register;
     private CreateCategory createCategory;
     private CreateCredentials createCredentials;
+    private EditCategory editCategory;
+    private DeleteCategory deleteCategory;
     private ProfileNameAccess profileNameAccess;
     private SavedPortfolios savedPortfolios;
     public MyJFrame(String name)
@@ -29,6 +31,8 @@ public class MyJFrame extends JFrame
         register = new Register();
         createCategory = new CreateCategory();
         createCredentials = new CreateCredentials();
+        editCategory = new EditCategory();
+        deleteCategory = new DeleteCategory();
         profileNameAccess = new ProfileNameAccess();
         savedPortfolios = new SavedPortfolios();
         add(welcome);
@@ -68,6 +72,12 @@ public class MyJFrame extends JFrame
     }
     public CreateCredentials getCreateCredentials(){
         return createCredentials;
+    }
+    public EditCategory getEditCategory() {
+        return editCategory;
+    }
+    public DeleteCategory getDeleteCategory() {
+        return deleteCategory;
     }
     public ProfileNameAccess getProfileNameAccess() {
         return profileNameAccess;

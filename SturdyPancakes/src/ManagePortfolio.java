@@ -13,7 +13,7 @@ import javax.swing.*;
  * @author Frank
  */
 public class ManagePortfolio extends JPanel{
-    private JButton backButton, createCategoryButton, editCategoryButton, createCredentialsButton, editCredentialsButton, settingsButton; 
+    private JButton backButton, createCategoryButton, editCategoryButton, deleteCategoryButton, createCredentialsButton, editCredentialsButton, settingsButton; 
     
     public ManagePortfolio(){
         super();
@@ -39,21 +39,34 @@ public class ManagePortfolio extends JPanel{
    
         c.gridx = 1;
         c.gridy = 0;
-        createCategoryButton = new JButton("Create/Edit Categories");
+        createCategoryButton = new JButton("Create Categories");
         createCategoryButton.setOpaque(false);
         createCategoryButton.setContentAreaFilled(false);
         add(createCategoryButton,c);
         
-        
         c.gridx = 1;
         c.gridy = 1;
+        editCategoryButton = new JButton("Edit Categories");
+        editCategoryButton.setOpaque(false);
+        editCategoryButton.setContentAreaFilled(false);
+        add(editCategoryButton,c);
+        
+        c.gridx = 1;
+        c.gridy = 2;
+        deleteCategoryButton = new JButton("Delete Categories");
+        deleteCategoryButton.setOpaque(false);
+        deleteCategoryButton.setContentAreaFilled(false);
+        add(deleteCategoryButton,c);
+        
+        c.gridx = 1;
+        c.gridy = 3;
         createCredentialsButton = new JButton("Create Credentials");
         createCredentialsButton.setOpaque(false);
         createCredentialsButton.setContentAreaFilled(false);
         add(createCredentialsButton,c);
         
         c.gridx = 1;
-        c.gridy = 2;
+        c.gridy = 4;
         editCredentialsButton = new JButton("Edit Credentials");
         editCredentialsButton.setOpaque(false); 
         editCredentialsButton.setContentAreaFilled(false);
@@ -79,6 +92,9 @@ public class ManagePortfolio extends JPanel{
     }
     public JButton getEditCredentialsButton() {
         return editCredentialsButton;
+    }
+    public JButton getDeleteCategoryButton() {
+        return deleteCategoryButton;
     }
     public JButton getCreateCategoryButton() {
         return createCategoryButton;
