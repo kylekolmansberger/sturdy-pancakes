@@ -13,7 +13,7 @@ import javax.swing.*;
  * @author Frank
  */
 public class ManagePortfolio extends JPanel{
-    private JButton backButton, createCategoryButton, editCategoryButton, deleteCategoryButton, createCredentialsButton, editCredentialsButton, settingsButton; 
+    private JButton backButton, createCategoryButton, editCategoryButton, deleteCategoryButton, createCredentialsButton, editCredentialsButton, deleteCredentialsButton, settingsButton; 
     
     public ManagePortfolio(){
         super();
@@ -72,6 +72,13 @@ public class ManagePortfolio extends JPanel{
         editCredentialsButton.setContentAreaFilled(false);
         add(editCredentialsButton,c);
         
+        c.gridx = 1;
+        c.gridy = 5;
+        deleteCredentialsButton = new JButton("Delete Credentials");
+        deleteCredentialsButton.setOpaque(false); 
+        deleteCredentialsButton.setContentAreaFilled(false);
+        add(deleteCredentialsButton,c);
+        
         c.ipadx = 0;
         c.ipady = 0;
         c.gridx=2;
@@ -101,6 +108,9 @@ public class ManagePortfolio extends JPanel{
     }
     public JButton getEditCategoryButton() {
         return editCategoryButton;
+    }
+    public JButton getDeleteCredentialsButton() {
+        return deleteCredentialsButton;
     }
     public JButton getSettingsButton() {
         return settingsButton;

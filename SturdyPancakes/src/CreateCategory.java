@@ -15,7 +15,7 @@ import javax.swing.*;
  */
 public class CreateCategory extends JPanel 
 {
- private JButton createButton, backButton, editButton;
+ private JButton createButton, backButton;
  private JLabel label1, label2, createStatus ;
  private JTextField categoryName, username;
     public CreateCategory  () 
@@ -92,15 +92,7 @@ public class CreateCategory extends JPanel
         c.insets = new Insets(0,0,0,0); 
         add(createStatus,c);
         
-        editButton = new JButton("Edit Existing Category");
-        editButton.setOpaque(false);
-        editButton.setContentAreaFilled(false);
-        c.gridx = 1;
-        c.gridy = 7;
-        c.insets = new Insets(10,0,20,0);
-        add(editButton,c);
-        
-        
+  
     } 
     
     public JButton getBackButton() {
@@ -124,8 +116,5 @@ public class CreateCategory extends JPanel
     public JButton getCreateButton(){
         return createButton;
     }
-    public JButton getEditButton(){
-        return editButton;
-    } 
     
 }

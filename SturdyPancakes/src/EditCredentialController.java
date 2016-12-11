@@ -1,35 +1,35 @@
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 /**
  *
  * @author nadaziab
  */
-public class EditCategoryController implements Menu {
+public class EditCredentialController implements Menu {
 
-    private Model model;
-    private View view;
-
-    public EditCategoryController(Model a, View b) {
+    Model model;
+    View view;
+    
+    public EditCredentialController(Model a, View b) {
         model = a;
         view = b;
-        menuChoice();
+        actionListener();
     }
-
-    private void menuChoice() {
-
+    
+    private void actionListener() {
         ActionListener menuChoice = new ActionListener() {
+            
             @Override
             public void actionPerformed(ActionEvent event) {
-                if (event.getSource() == view.getMyJFrame().getManagePortfolio().getEditCategoryButton()) {
-                    view.getMyJFrame().setContentPane(view.getMyJFrame().getEditCategory());
+                if (event.getSource() == view.getMyJFrame().getManagePortfolio().getEditCredentialsButton()) {
+                    view.getMyJFrame().setContentPane(view.getMyJFrame().getEditCredential());
                     view.getMyJFrame().revalidate();
                 }
             }
@@ -37,13 +37,12 @@ public class EditCategoryController implements Menu {
         //=======================================================
         //Menu choice pressed
         //=======================================================
-        view.getMyJFrame().getManagePortfolio().getEditCategoryButton().addActionListener(menuChoice);
-        
+        view.getMyJFrame().getManagePortfolio().getEditCredentialsButton().addActionListener(menuChoice);
         
         ActionListener backButton = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
-                if (event.getSource() == view.getMyJFrame().getEditCategory().getBackButton()) {
+                if (event.getSource() == view.getMyJFrame().getEditCredential().getBackButton()) {
                     view.getMyJFrame().setContentPane(view.getMyJFrame().getManagePortfolio());
                     view.getMyJFrame().revalidate();
                 }
@@ -52,39 +51,42 @@ public class EditCategoryController implements Menu {
         //=======================================================
         //Back Button pressed
         //=======================================================
-        view.getMyJFrame().getEditCategory().getBackButton().addActionListener(backButton);
+        view.getMyJFrame().getEditCredential().getBackButton().addActionListener(backButton);
+        
         
         ActionListener editButton = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
-                if (event.getSource() == view.getMyJFrame().getEditCategory().getEditButton()) {
-                    String categoryName = view.getMyJFrame().getEditCategory().getCategoryName().getText();
-                    String newCategoryName = view.getMyJFrame().getEditCategory().getNewCategoryName().getText();
+                if (event.getSource() == view.getMyJFrame().getEditCredential().getEditButton()) {
                     String profileName = view.getMyJFrame().getProfileNameAccess().getProfileName();
-                    File file1 = new File ("SuperSecretStuff/" + profileName + "/" + categoryName + ".txt");
-                    File file2 = new File ("SuperSecretStuff/" + profileName + "/" + newCategoryName + ".txt");
-                    if (file1.exists()) {
-                        file1.renameTo(file2);
-                    }
-                    else {
-                        //file doesn't exist
-                        System.out.println("no file");
-                    }
+                    String categoryName = view.getMyJFrame().getEditCredential().getCategoryName().getText();
+                    String credentialName = view.getMyJFrame().getEditCredential().getCredentialName().getText();
+                    String username = view.getMyJFrame().getEditCredential().getUsername().getText();
+                    String password = view.getMyJFrame().getEditCredential().getPassword().getText();
                     
-                    //view.getMyJFrame().setContentPane(view.getMyJFrame().getManagePortfolio());
-                    //view.getMyJFrame().revalidate();
+                    view.getMyJFrame().getCredentialRemover().removeCredential(profileName, categoryName, credentialName);
+                    view.getMyJFrame().getCredentialAdder().addCredential(profileName, categoryName, credentialName, username, password);
+                    
+                    
                 }
-                view.getMyJFrame().getEditCategory().getEditStauts().setText("File Successfully Renamed");
+                view.getMyJFrame().getEditCredential().getEditStatus().setText("Credential Updated");
             }
         };
         //=======================================================
-        //Edit Category Button pressed
+        //Edit Button pressed
         //=======================================================
-        view.getMyJFrame().getEditCategory().getEditButton().addActionListener(editButton);
-    }
+        view.getMyJFrame().getEditCredential().getEditButton().addActionListener(editButton);
+        
+        }
     
     
-
+    
+    
+    
+       
+    
+    
+    
     @Override
     public void getUserSelection() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -94,5 +96,13 @@ public class EditCategoryController implements Menu {
     public void runUserSelection() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
 }
+    
+    
+    
+    
+    
+    
+    
+

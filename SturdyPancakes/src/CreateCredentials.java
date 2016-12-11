@@ -16,7 +16,7 @@ import javax.swing.*;
 public class CreateCredentials extends JPanel 
 {
  private JButton createButton, backButton;
- private JLabel label1, label2, label3, label4;
+ private JLabel label1, label2, label3, label4, createStatus;
  private JTextField username, password, credentialName, category;
     public CreateCredentials  () 
     {
@@ -63,7 +63,7 @@ public class CreateCredentials extends JPanel
         c.insets = new Insets(0,0,0,0); 
         add(password,c);
         
-         label2 = new JLabel("Password: ", SwingConstants.LEFT);
+        label2 = new JLabel("Password: ", SwingConstants.LEFT);
         label2.setFont(new Font("Serif",Font.PLAIN, 18));
         label2.setOpaque(false);
         c.gridx = 1;  
@@ -109,26 +109,32 @@ public class CreateCredentials extends JPanel
         c.insets = new Insets(0,0,0,0);
         add(createButton, c);
         
+        createStatus = new JLabel("", SwingConstants.CENTER);
+        c.gridx = 1;
+        c.gridy = 10;
+        c.insets = new Insets(0,0,0,0);
+        add(createStatus, c);
+        
         
         
     }    
     
-    public JLabel getLabel1 (){
+    public JLabel getLabel1(){
         return label1;
     }
-    public JLabel getLabel2 (){
+    public JLabel getLabel2(){
         return label2;
     }
-    public JLabel getLabel3 (){
+    public JLabel getLabel3(){
         return label3;
     }
-    public JLabel getLabel4 (){
+    public JLabel getLabel4(){
         return label4;
     }
-    public JTextField getUsername (){
+    public JTextField getUsername(){
         return username;
     }
-    public JTextField getPassword (){
+    public JTextField getPassword(){
         return password;
     }
     public JTextField getCredentialName (){
@@ -137,10 +143,13 @@ public class CreateCredentials extends JPanel
     public JTextField getCategory(){
         return category;
     }
-    public JButton getCreateButton (){
+    public JButton getCreateButton(){
         return createButton;
     }
-    public JButton getBackButton (){
+    public JButton getBackButton(){
         return backButton;
+    }
+    public JLabel getCreateStatus() {
+        return createStatus;
     }
 }

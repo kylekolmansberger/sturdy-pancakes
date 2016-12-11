@@ -68,25 +68,12 @@ public class CreateCredentialsController implements Menu {
                     category = view.getMyJFrame().getCreateCredentials().getCategory().getText();
                     profileName = view.getMyJFrame().getProfileNameAccess().getProfileName();
                     
+                    view.getMyJFrame().getCredentialAdder().addCredential(profileName, category, credentialName, username, password);
                     
-                    File file = new File("SuperSecretStuff/" + profileName + "/" +  category + ".txt");
-                
-                    try {
-            
-                        FileWriter fw = new FileWriter(file, true);
-                        BufferedWriter bw = new BufferedWriter(fw);
-                        bw.write(credentialName + "#" + username + "#" + password);
-                        bw.newLine();
-                        bw.close();
-        
-                    } catch (IOException e) {
-                        
-                        
-                        
-                    }
                     
                     
                 }
+                view.getMyJFrame().getCreateCredentials().getCreateStatus().setText("Created");
             }
             
         };
