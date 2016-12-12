@@ -7,57 +7,55 @@ import javax.swing.event.*;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Frank Liang
  */
 public class GeneratorController {
+
     Model model;
     View view;
-    public GeneratorController (Model a, View b) {
+
+    public GeneratorController(Model a, View b) {
         model = a;
         view = b;
         newActionListener();
     }
-    
-    public void newActionListener(){
+
+    public void newActionListener() {
         //=======================================================
         //Password Options
         //=======================================================
-        ItemListener passwordOptions = new ItemListener(){
+        ItemListener passwordOptions = new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent event) {
                 Object source = event.getSource();
                 char[] temp = model.getGenerator().getChoices();
-                
-                if(source == view.getMyJFrame().getGeneratePassword().getNumbers()){
+
+                if (source == view.getMyJFrame().getGeneratePassword().getNumbers()) {
                     int state = event.getStateChange();
-                    if(state == ItemEvent.SELECTED){
-                        temp[0]='t';
-                    }
-                    else{
-                        temp[0]='-';
+                    if (state == ItemEvent.SELECTED) {
+                        temp[0] = 't';
+                    } else {
+                        temp[0] = '-';
                     }
                     model.getGenerator().setChoices(temp);
                 }
-                if(source == view.getMyJFrame().getGeneratePassword().getLetters()){
+                if (source == view.getMyJFrame().getGeneratePassword().getLetters()) {
                     int state = event.getStateChange();
-                    if(state == ItemEvent.SELECTED){
-                        temp[1]='t';
-                    }
-                    else{
-                        temp[1]='-';
+                    if (state == ItemEvent.SELECTED) {
+                        temp[1] = 't';
+                    } else {
+                        temp[1] = '-';
                     }
                     model.getGenerator().setChoices(temp);
                 }
-                if(source == view.getMyJFrame().getGeneratePassword().getSpecialChars()){
+                if (source == view.getMyJFrame().getGeneratePassword().getSpecialChars()) {
                     int state = event.getStateChange();
-                    if(state == ItemEvent.SELECTED){
-                        temp[2]='t';
-                    }
-                    else{
-                        temp[2]='-';
+                    if (state == ItemEvent.SELECTED) {
+                        temp[2] = 't';
+                    } else {
+                        temp[2] = '-';
                     }
                     model.getGenerator().setChoices(temp);
                 }
@@ -66,19 +64,42 @@ public class GeneratorController {
         //=======================================================
         //Generate button
         //=======================================================
-         ActionListener generatePassword = new ActionListener(){
+        ActionListener generatePassword = new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent event){
+            public void actionPerformed(ActionEvent event) {
                 Object source = event.getSource();
-                if(source == view.getMyJFrame().getGeneratePassword().getGenerate()){
+                if (source == view.getMyJFrame().getGeneratePassword().getGenerate()) {
                     model.getGenerator().setParameters(new String(model.getGenerator().getChoices()));
-                   model.getGenerator().setLength(Integer.parseInt(view.getMyJFrame().getGeneratePassword().getLength().getText())+1);
+                    model.getGenerator().setLength(Integer.parseInt(view.getMyJFrame().getGeneratePassword().getLength().getText()) + 1);
                     model.getGenerator().Generator();
                     view.getMyJFrame().getGeneratePassword().getGeneratedPassword().setText("Password: " + model.getGenerator().getGeneratedPassword());
                 }
             }
         };
-        
+
+        KeyListener pressedKeys = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent event) {
+            }
+
+            @Override
+            public void keyReleased(KeyEvent event) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent event) {
+                int action = event.getKeyCode();
+                if (action == event.VK_ENTER) {
+                    model.getGenerator().setParameters(new String(model.getGenerator().getChoices()));
+                    model.getGenerator().setLength(Integer.parseInt(view.getMyJFrame().getGeneratePassword().getLength().getText()) + 1);
+                    model.getGenerator().Generator();
+                    view.getMyJFrame().getGeneratePassword().getGeneratedPassword().setText("Password: " + model.getGenerator().getGeneratedPassword());
+                }
+
+            }
+        };
+        view.getMyJFrame().getGeneratePassword().getLength().addKeyListener(pressedKeys);
+
         //=======================================================
         //Add Listeners
         //=======================================================

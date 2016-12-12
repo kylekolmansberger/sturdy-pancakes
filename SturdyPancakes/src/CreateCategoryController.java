@@ -28,7 +28,7 @@ public class CreateCategoryController implements Menu {
         view = b;
         menuChoice();
     }
-    
+
     private void menuChoice() {
 
         ActionListener menuChoice = new ActionListener() {
@@ -36,6 +36,8 @@ public class CreateCategoryController implements Menu {
             public void actionPerformed(ActionEvent event) {
                 if (event.getSource() == view.getMyJFrame().getManagePortfolio().getCreateCategoryButton()) {
                     view.getMyJFrame().setContentPane(view.getMyJFrame().getCreateCategory());
+                    view.getMyJFrame().getCreateCategory().getCategoryName().setText("");
+                    view.getMyJFrame().getCreateCategory().getCreateStatus().setText("");
                     view.getMyJFrame().revalidate();
                 }
             }
@@ -74,21 +76,66 @@ public class CreateCategoryController implements Menu {
                         // if file doesnt exists, then create it
                         if (!categoryFile.exists()) {
                             categoryFile.createNewFile();
-
+                            view.getMyJFrame().getCreateCategory().getCreateStatus().setText("Created");
+                        }
+                        else {
+                            view.getMyJFrame().getCreateCategory().getCreateStatus().setText("Failed: category already exists");
                         }
 
                     } catch (IOException e) {
                         System.out.println("Failed");
                     }
                 }
-                view.getMyJFrame().getCreateCategory().getCreateStatus().setText("Created");
+                
             }
         };
         //=======================================================
         //Create Category button pressed
         //=======================================================
         view.getMyJFrame().getCreateCategory().getCreateButton().addActionListener(categorySave);
+
         
+        
+        KeyListener pressedKeys = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent event) {
+            }
+
+            @Override
+            public void keyReleased(KeyEvent event) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent event) {
+                int action = event.getKeyCode();
+                if (action == event.VK_ENTER) {
+                    profileName = view.getMyJFrame().getProfileNameAccess().getProfileName();
+                    categoryName = view.getMyJFrame().getCreateCategory().getCategoryName().getText();
+
+                    try {
+                        categoryFile = new File("SuperSecretStuff/" + profileName + "/" + categoryName + ".txt");
+
+                        // if file doesnt exists, then create it
+                        if (!categoryFile.exists()) {
+                            categoryFile.createNewFile();
+                            view.getMyJFrame().getCreateCategory().getCreateStatus().setText("Created");
+                        }
+                        else {
+                            view.getMyJFrame().getCreateCategory().getCreateStatus().setText("Failed: category already exists");
+                        }
+
+                    } catch (IOException e) {
+                        //System.out.println("Failed");
+                    }
+                }
+                
+            }
+
+        };
+        //=======================================================
+        //Enter button pressed
+        //=======================================================
+        view.getMyJFrame().getCreateCategory().getCategoryName().addKeyListener(pressedKeys);
     }
 
     @Override

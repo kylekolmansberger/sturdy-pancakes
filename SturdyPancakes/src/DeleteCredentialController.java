@@ -1,6 +1,8 @@
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,29 +19,30 @@ import java.util.logging.Logger;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author nadaziab
  */
 public class DeleteCredentialController implements Menu {
 
-    
     Model model;
     View view;
-    
+
     public DeleteCredentialController(Model a, View b) {
         model = a;
         view = b;
         actionListener();
     }
-    
+
     private void actionListener() {
         ActionListener menuChoice = new ActionListener() {
-            
+
             @Override
             public void actionPerformed(ActionEvent event) {
                 if (event.getSource() == view.getMyJFrame().getManagePortfolio().getDeleteCredentialsButton()) {
+                    view.getMyJFrame().getDeleteCredentials().getCategoryName().setText("");
+                    view.getMyJFrame().getDeleteCredentials().getCredentialName().setText("");
+                    view.getMyJFrame().getDeleteCredentials().getDeleteStatus().setText("");
                     view.getMyJFrame().setContentPane(view.getMyJFrame().getDeleteCredentials());
                     view.getMyJFrame().revalidate();
                 }
@@ -49,9 +52,7 @@ public class DeleteCredentialController implements Menu {
         //Menu choice pressed
         //=======================================================
         view.getMyJFrame().getManagePortfolio().getDeleteCredentialsButton().addActionListener(menuChoice);
-        
-        
-        
+
         ActionListener backButton = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
@@ -65,9 +66,7 @@ public class DeleteCredentialController implements Menu {
         //Back Button pressed
         //=======================================================
         view.getMyJFrame().getDeleteCredentials().getBackButton().addActionListener(backButton);
-        
-         
-        
+
         ActionListener deleteButton = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
@@ -75,26 +74,47 @@ public class DeleteCredentialController implements Menu {
                     String profileName = view.getMyJFrame().getProfileNameAccess().getProfileName();
                     String categoryName = view.getMyJFrame().getDeleteCredentials().getCategoryName().getText();
                     String credentialName = view.getMyJFrame().getDeleteCredentials().getCredentialName().getText();
-                    
+
                     view.getMyJFrame().getCredentialRemover().removeCredential(profileName, categoryName, credentialName);
-                    
+                    view.getMyJFrame().getDeleteCredentials().getDeleteStatus().setText("Credential Deleted");
                 }
-                view.getMyJFrame().getDeleteCredentials().getDeleteStatus().setText("Credential Successfully Deleted");
+
             }
-            
+
         };
-        
+
         //=======================================================
         //Delete Button pressed
         //=======================================================
         view.getMyJFrame().getDeleteCredentials().getDeleteButton().addActionListener(deleteButton);
-        
-        }
-    
-    
-    
-    
-    
+
+        KeyListener pressedKeys = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent event) {
+            }
+
+            @Override
+            public void keyReleased(KeyEvent event) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent event) {
+                int action = event.getKeyCode();
+                if (action == event.VK_ENTER) {
+                    String profileName = view.getMyJFrame().getProfileNameAccess().getProfileName();
+                    String categoryName = view.getMyJFrame().getDeleteCredentials().getCategoryName().getText();
+                    String credentialName = view.getMyJFrame().getDeleteCredentials().getCredentialName().getText();
+
+                    view.getMyJFrame().getCredentialRemover().removeCredential(profileName, categoryName, credentialName);
+                    view.getMyJFrame().getDeleteCredentials().getDeleteStatus().setText("Credential Deleted");
+                }
+
+            }
+        };
+        view.getMyJFrame().getDeleteCredentials().getCredentialName().addKeyListener(pressedKeys);
+
+    }
+
     @Override
     public void getUserSelection() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -104,5 +124,5 @@ public class DeleteCredentialController implements Menu {
     public void runUserSelection() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

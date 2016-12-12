@@ -1,3 +1,4 @@
+
 import java.awt.event.*;
 import java.io.IOException;
 import java.io.BufferedWriter;
@@ -15,23 +16,29 @@ import java.io.FileWriter;
  * @author kck5178
  */
 public class CreateCredentialsController implements Menu {
+
     private Model model;
     private View view;
-    
+
     String credentialName, username, password, category, profileName;
-    
-    public CreateCredentialsController (Model a, View b) {
+
+    public CreateCredentialsController(Model a, View b) {
         model = a;
         view = b;
         menuChoice();
     }
-    private void menuChoice(){ 
-        
-    
-    ActionListener menuChoice = new ActionListener(){
+
+    private void menuChoice() {
+
+        ActionListener menuChoice = new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent event){
-                if(event.getSource() == view.getMyJFrame().getManagePortfolio().getCreateCredentialsButton()){
+            public void actionPerformed(ActionEvent event) {
+                if (event.getSource() == view.getMyJFrame().getManagePortfolio().getCreateCredentialsButton()) {
+                    view.getMyJFrame().getCreateCredentials().getCredentialName().setText("");
+                    view.getMyJFrame().getCreateCredentials().getUsername().setText("");
+                    view.getMyJFrame().getCreateCredentials().getPassword().setText("");
+                    view.getMyJFrame().getCreateCredentials().getCategory().setText("");
+                    view.getMyJFrame().getCreateCredentials().getCreateStatus().setText("");
                     view.getMyJFrame().setContentPane(view.getMyJFrame().getCreateCredentials());
                     view.getMyJFrame().revalidate();
                 }
@@ -40,59 +47,84 @@ public class CreateCredentialsController implements Menu {
         //=======================================================
         //Menu choice pressed
         //=======================================================
-    
+
         view.getMyJFrame().getManagePortfolio().getCreateCredentialsButton().addActionListener(menuChoice);
-        ActionListener backButton = new ActionListener(){
+        ActionListener backButton = new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent event){
-                if(event.getSource() == view.getMyJFrame().getCreateCredentials().getBackButton()){
+            public void actionPerformed(ActionEvent event) {
+                if (event.getSource() == view.getMyJFrame().getCreateCredentials().getBackButton()) {
                     view.getMyJFrame().setContentPane(view.getMyJFrame().getManagePortfolio());
                     view.getMyJFrame().revalidate();
                 }
             }
         };
-        
+
         //=======================================================
         //Back Button pressed
         //=======================================================
         view.getMyJFrame().getCreateCredentials().getBackButton().addActionListener(backButton);
         ActionListener createCredential;
-        createCredential = new ActionListener(){
-            
+        createCredential = new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent event) {
-                if(event.getSource() == view.getMyJFrame().getCreateCredentials().getCreateButton()){
+                if (event.getSource() == view.getMyJFrame().getCreateCredentials().getCreateButton()) {
+                    
                     credentialName = view.getMyJFrame().getCreateCredentials().getCredentialName().getText();
                     username = view.getMyJFrame().getCreateCredentials().getUsername().getText();
                     password = view.getMyJFrame().getCreateCredentials().getPassword().getText();
                     category = view.getMyJFrame().getCreateCredentials().getCategory().getText();
                     profileName = view.getMyJFrame().getProfileNameAccess().getProfileName();
-                    
+
                     view.getMyJFrame().getCredentialAdder().addCredential(profileName, category, credentialName, username, password);
-                    
-                    
-                    
+                    view.getMyJFrame().getCreateCredentials().getCreateStatus().setText("Created");
                 }
-                view.getMyJFrame().getCreateCredentials().getCreateStatus().setText("Created");
+
             }
-            
+
         };
-        
+
         //=======================================================
         //Create Credential Button pressed
         //=======================================================
         view.getMyJFrame().getCreateCredentials().getCreateButton().addActionListener(createCredential);
-        
+
+        KeyListener pressedKeys = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent event) {
+            }
+
+            @Override
+            public void keyReleased(KeyEvent event) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent event) {
+                int action = event.getKeyCode();
+                if (action == event.VK_ENTER) {
+                    credentialName = view.getMyJFrame().getCreateCredentials().getCredentialName().getText();
+                    username = view.getMyJFrame().getCreateCredentials().getUsername().getText();
+                    password = view.getMyJFrame().getCreateCredentials().getPassword().getText();
+                    category = view.getMyJFrame().getCreateCredentials().getCategory().getText();
+                    profileName = view.getMyJFrame().getProfileNameAccess().getProfileName();
+
+                    view.getMyJFrame().getCredentialAdder().addCredential(profileName, category, credentialName, username, password);
+                    view.getMyJFrame().getCreateCredentials().getCreateStatus().setText("Created");
+                }
+
+            }
+        };
+        view.getMyJFrame().getCreateCredentials().getCategory().addKeyListener(pressedKeys);
     }
 
     @Override
     public void getUserSelection() {
-       
+
     }
 
     @Override
     public void runUserSelection() {
-      
+
     }
 
 }

@@ -14,7 +14,7 @@ import javax.swing.*;
  */
 public class GeneratePassword extends JPanel{
     private JButton backButton, generate;
-    private JLabel passwordOptions,generatedPassword;
+    private JLabel passwordOptions,generatedPassword, lengthLabel;
     private JCheckBox numbers, letters, specialChars;
     private JTextField length;
     public GeneratePassword(){
@@ -69,10 +69,19 @@ public class GeneratePassword extends JPanel{
         c.insets = new Insets(0,0,0,0);
         add(specialChars, c);
         
+        lengthLabel = new JLabel("Password Length:");
+        c.ipadx = 0;
+        c.ipady = 60;
+        c.gridx = 1;  
+        c.gridy = 4;
+        c.insets = new Insets(0,0,0,0);
+        lengthLabel.setFont(new Font("Serif",Font.PLAIN, 18));
+        add(lengthLabel,c);
+        
         length = new JTextField();
         length.setFocusable(true);
         c.gridx = 1;  
-        c.gridy = 4;
+        c.gridy = 5;
         c.ipadx = 150;
         c.ipady = 25;
         c.insets = new Insets(0,0,0,00);
@@ -82,8 +91,8 @@ public class GeneratePassword extends JPanel{
         c.ipadx = 0;
         c.ipady = 60;
         c.gridx = 1;  
-        c.gridy = 4;
-        c.insets = new Insets(100,0,0,0);
+        c.gridy = 6;
+        c.insets = new Insets(30,0,0,0);
         generatedPassword.setFont(new Font("Serif",Font.PLAIN, 18));
         add(generatedPassword,c);
         
@@ -93,7 +102,7 @@ public class GeneratePassword extends JPanel{
         c.fill = GridBagConstraints.NONE;
         c.anchor = GridBagConstraints.WEST;
         c.gridx = 1;  
-        c.gridy = 6;
+        c.gridy = 7;
         c.insets = new Insets(100,0,100,0);
         add(generate,c);
         
