@@ -45,17 +45,16 @@ public class EditCategory extends JPanel {
         c.anchor = GridBagConstraints.NORTHWEST;
         add(backButton,c);
         
-        c.ipadx = 100;
-        c.ipady = 100;
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.anchor = GridBagConstraints.WEST;
+        c.ipadx = 182;
+        c.ipady = 10;
+       
         
         label1 = new JLabel("Old Category Name:", SwingConstants.LEFT);
         label1.setFont(new Font("Serif",Font.PLAIN, 18));
         label1.setOpaque(false);
         c.gridx = 1;
         c.gridy = 0;
-        c.insets = new Insets(0,0,0,0); 
+        c.insets = new Insets(350,0,0,0); 
         add(label1, c);
         
         categoryName = new JTextField();
@@ -68,7 +67,7 @@ public class EditCategory extends JPanel {
         add(categoryName,c);
         
          
-        label2 = new JLabel("New Category Name:", SwingConstants.CENTER);
+        label2 = new JLabel("New Category Name:", SwingConstants.LEFT);
         label2.setFont(new Font("Serif",Font.PLAIN, 18));
         label2.setOpaque(false);
         c.gridx = 1;

@@ -13,8 +13,8 @@ import javax.swing.*;
  * @author Frank
  */
 public class ManagePortfolio extends JPanel{
-    private JButton backButton, createCategoryButton, editCategoryButton, deleteCategoryButton, createCredentialsButton, editCredentialsButton, deleteCredentialsButton, settingsButton; 
-    
+    private JButton backButton, createCategoryButton, editCategoryButton, deleteCategoryButton, createCredentialsButton, editCredentialsButton, deleteCredentialsButton; 
+    private JLabel jlabel1;
     public ManagePortfolio(){
         super();
         setVisible(true);
@@ -84,10 +84,8 @@ public class ManagePortfolio extends JPanel{
         c.gridx=2;
         c.fill = GridBagConstraints.NONE;
         c.anchor = GridBagConstraints.SOUTHEAST;
-        settingsButton = new JButton("Settings");
-        settingsButton.setOpaque(false);
-        settingsButton.setContentAreaFilled(false);
-        add(settingsButton,c);
+        jlabel1 = new JLabel("");
+        add(jlabel1,c);
         
         
     }
@@ -112,8 +110,6 @@ public class ManagePortfolio extends JPanel{
     public JButton getDeleteCredentialsButton() {
         return deleteCredentialsButton;
     }
-    public JButton getSettingsButton() {
-        return settingsButton;
-    }
+    
     
 }

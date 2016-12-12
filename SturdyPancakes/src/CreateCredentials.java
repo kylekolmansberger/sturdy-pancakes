@@ -102,6 +102,7 @@ public class CreateCredentials extends JPanel
         add(category, c);
         
         createButton = new JButton("Create");
+        createButton.setOpaque(false);
         createButton.setFont(new Font("Serif",Font.PLAIN, 20));
         c.gridx = 1;
         c.gridy = 9;
