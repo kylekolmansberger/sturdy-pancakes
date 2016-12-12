@@ -14,7 +14,7 @@ import javax.swing.*;
 public class ViewPortfolio extends JPanel{
     
     private JButton backButton, submitButton;
-    private JLabel filler, category;
+    private JLabel filler, category, information;
     private JTextField categoryName;
     
     public ViewPortfolio(){
@@ -55,11 +55,17 @@ public class ViewPortfolio extends JPanel{
         c.gridy = 2;
         add(categoryName, c);
         
+        information = new JLabel();
+        information.setFont(new Font("Serif", Font.PLAIN, 18));
+        c.gridx = 1;
+        c.gridy = 3;
+        add(information,c);
+        
         submitButton = new JButton("View Portfolio");
         submitButton.setOpaque(false);
         submitButton.setContentAreaFilled(false);
         c.gridx = 1;
-        c.gridy = 3;
+        c.gridy = 4;
         c.insets = new Insets(0,0,0,0);
         add(submitButton, c);
         
@@ -78,5 +84,7 @@ public class ViewPortfolio extends JPanel{
     public JButton getSubmitButton() {
         return submitButton;
     }
-    
+    public JLabel getInformation(){
+        return information;
+    }
 }
