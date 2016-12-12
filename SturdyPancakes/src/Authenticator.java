@@ -62,4 +62,7 @@ public class Authenticator {
     public ArrayList<String> getUsers(){
         return users;
     }
+    public void setLogins(File logins){
+        this.logins = logins;
+    }
 }

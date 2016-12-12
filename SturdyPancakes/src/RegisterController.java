@@ -39,7 +39,7 @@ public class RegisterController{
                     new File("SuperSecretStuff/"+username).mkdir();
                     try {
                         loginFile = new File ("SuperSecretStuff/logins.txt");
-                        
+                        model.getAuthenticate().setLogins(loginFile);
                         // if file doesnt exists, then create it
                         
                         if (!loginFile.exists()) {
