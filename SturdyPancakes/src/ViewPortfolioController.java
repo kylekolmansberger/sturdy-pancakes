@@ -24,6 +24,8 @@ public class ViewPortfolioController implements Menu {
 
     private Model model;
     private View view;
+    private String label,username,password;
+    
     
     public ViewPortfolioController(Model a, View b) {
         model = a;
@@ -39,7 +41,7 @@ public class ViewPortfolioController implements Menu {
                 if (event.getSource() == view.getMyJFrame().getViewPortfolio().getSubmitButton()) {
                     String categoryName = view.getMyJFrame().getViewPortfolio().getCategoryName().getText();
                     String profileName = view.getMyJFrame().getProfileNameAccess().getProfileName();
-                    
+                    String temp = "";
                     try {
                         Scanner in = new Scanner(new File("SuperSecretStuff/" + profileName + "/" + categoryName + ".txt"));
                         ArrayList<String> credentials = new ArrayList<>();
@@ -48,13 +50,28 @@ public class ViewPortfolioController implements Menu {
                         }
                         view.getMyJFrame().getSavedPortfolios().savePortfolio(credentials);
                         view.getMyJFrame().getSavedPortfolios().separateLines();
-                        /*
-                        for (int i = 0; i < credentials.size(); i++) {
-                            System.out.println(credentials.get(i));
-                        }
-                        */
                         
+                        for (int i = 0; i < credentials.size(); i++) {
+                            
+                            String temp2 = credentials.get(i);
+                            int space = temp2.indexOf("#");
+                            label =temp2.substring(0,space);
+                            temp2 = temp2.substring(space + 1);
+                            
+                            space = temp2.indexOf("#");
+                            username = temp2.substring(0, space);
+                            temp2 = temp2.substring(space + 1);
+                            
+                            password = temp2;
+                            
+                            temp = temp + "<br>Credential: "+label+"<br>Username: "+ username + "<br>Password: "+ password+ "<br>";
+                            System.out.println("<html>" + temp+ "</html>");
+                            view.getMyJFrame().getViewPortfolio().getInformation().setText("<html>" + temp + "</html>");
+                            
+                            
+                        }
                         in.close();
+                        
                         
                     } catch (IOException e) {
                         System.out.println("Failed");
