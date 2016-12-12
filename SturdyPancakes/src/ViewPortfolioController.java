@@ -64,15 +64,12 @@ public class ViewPortfolioController implements Menu {
                             
                             password = temp2;
                             
-                            temp = temp + "<br>Label: "+label+"<br>Username: "+ username + "<br>Password: "+ password+ "<br>";
+                            temp = temp + "<br>Credential: "+label+"<br>Username: "+ username + "<br>Password: "+ password+ "<br>";
                             System.out.println("<html>" + temp+ "</html>");
                             view.getMyJFrame().getViewPortfolio().getInformation().setText("<html>" + temp + "</html>");
                             
                             
                         }
-                        
-                        
-                        
                         in.close();
                         
                         
