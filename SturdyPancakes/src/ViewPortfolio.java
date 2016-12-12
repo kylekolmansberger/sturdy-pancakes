@@ -14,7 +14,7 @@ import javax.swing.*;
 public class ViewPortfolio extends JPanel{
     
     private JButton backButton, submitButton;
-    private JLabel filler;
+    private JLabel filler, category;
     private JTextField categoryName;
     
     public ViewPortfolio(){
@@ -38,9 +38,8 @@ public class ViewPortfolio extends JPanel{
         c.anchor = GridBagConstraints.NORTHWEST;
         add(backButton, c);
         
-        
-        categoryName = new JTextField();
-        categoryName.setFont(new Font("Serif", Font.PLAIN, 18));
+        category = new JLabel("Enter Category Name", SwingConstants.CENTER);
+        category.setFont(new Font("Serif", Font.PLAIN, 18));
         c.anchor = GridBagConstraints.CENTER;
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
@@ -48,13 +47,19 @@ public class ViewPortfolio extends JPanel{
         c.ipadx = 250;
         c.ipady = 25;
         c.insets = new Insets(0,0,0,0);
+        add(category,c);
+               
+        categoryName = new JTextField();
+        categoryName.setFont(new Font("Serif", Font.PLAIN, 18));
+        c.gridx = 1;
+        c.gridy = 2;
         add(categoryName, c);
         
         submitButton = new JButton("View Portfolio");
         submitButton.setOpaque(false);
         submitButton.setContentAreaFilled(false);
         c.gridx = 1;
-        c.gridy = 2;
+        c.gridy = 3;
         c.insets = new Insets(0,0,0,0);
         add(submitButton, c);
         
