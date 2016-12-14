@@ -97,8 +97,18 @@ public class LoginController {
                 int action = event.getKeyCode();
                 if(action == event.VK_ENTER)
                 {
-                    model.getAuthenticate().setLogin(view.getMyJFrame().getLoginScreen().getUsername().getText().replace(" ", "#")+ "#" + view.getMyJFrame().getLoginScreen().getPassword().getText());
-                    model.getAuthenticate().checkLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "#" + view.getMyJFrame().getLoginScreen().getPassword().getText());
+                    try {
+                       model.getAuthenticate().setLogin(model.getEncryption().encrypt(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "a" + view.getMyJFrame().getLoginScreen().getPassword().getText()));
+                   } catch (Exception ex) {
+                       System.out.println("Failed");
+                   }
+                   try {
+                       model.getAuthenticate().checkLogin(model.getEncryption().encrypt(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "a" + view.getMyJFrame().getLoginScreen().getPassword().getText()));
+                   System.out.println(model.getEncryption().encrypt(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "a" + view.getMyJFrame().getLoginScreen().getPassword().getText()));
+                   } catch (Exception ex) {
+                       System.out.println("Failed");
+                   }
+                   
                     System.out.println(model.getAuthenticate().getLogin());
                     if(model.getAuthenticate().getCheck()==true){
                        view.getMyJFrame().getProfileNameAccess().setProfileName(view.getMyJFrame().getLoginScreen().getUsername().getText());

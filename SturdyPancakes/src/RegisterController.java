@@ -110,9 +110,13 @@ public class RegisterController {
 
                         FileWriter fw = new FileWriter(loginFile, true);
                         PrintWriter pw = new PrintWriter(fw);
-                        pw.write(" " + username + "#" + password + " ");
+                        loginInfo = username + "a" + password;
+                        securedInfo = model.getEncryption().encrypt(loginInfo);
+                        pw.write(" " + securedInfo+ " ");
                         pw.close();
                     } catch (IOException e) {
+                        System.out.println("Failed");
+                    } catch (Exception ex) {
                         System.out.println("Failed");
                     }
 
