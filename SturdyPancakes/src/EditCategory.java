@@ -39,7 +39,7 @@ public class EditCategory extends JPanel {
         c.ipadx = 0;
         c.ipady = 20;
         
-        backButton = new JButton("< Main Menu");
+        backButton = new JButton("< Back");
         backButton.setOpaque(false);
         backButton.setContentAreaFilled(false);
         c.anchor = GridBagConstraints.NORTHWEST;
