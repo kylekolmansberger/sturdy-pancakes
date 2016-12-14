@@ -1,6 +1,8 @@
 
 import java.awt.event.*;
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,6 +19,7 @@ public class RegisterController {
     private View view;
     String username, password;
     private File loginFile;
+    private String loginInfo,securedInfo;
 
     public RegisterController(Model a, View b) {
         super();
@@ -35,7 +38,7 @@ public class RegisterController {
                 if (event.getSource() == view.getMyJFrame().getRegister().getRegister()) {
 
                     username = view.getMyJFrame().getRegister().getUsername().getText();
-                    username = username.replaceAll(" ", "#");
+                    username = username.replaceAll(" ", "a");
                     password = view.getMyJFrame().getRegister().getPassword().getText();
                     new File("SuperSecretStuff/" + username).mkdir();
                     try {
@@ -50,13 +53,18 @@ public class RegisterController {
 
                         FileWriter fw = new FileWriter(loginFile, true);
                         PrintWriter pw = new PrintWriter(fw);
-                        pw.write(" " + username + "#" + password + " ");
+                        
+                        loginInfo = username + "a" + password;
+                        securedInfo = model.getEncryption().encrypt(loginInfo);
+                        pw.write(" " + securedInfo+ " ");
                         pw.close();
                     } catch (IOException e) {
                         System.out.println("Failed");
+                    } catch (Exception ex) {
+                        System.out.println("Failed");
                     }
 
-                    model.getAuthenticate().getUsers().add(username + "#" + password);
+                    model.getAuthenticate().getUsers().add(securedInfo);
                     System.out.println(model.getAuthenticate().getUsers());
 
                     view.getMyJFrame().getRegister().getRegisterStatus().setText("Registered");

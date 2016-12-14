@@ -4,6 +4,8 @@ import java.io.*;
 import javax.swing.*;
 import javax.swing.ActionMap;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -52,8 +54,17 @@ public class LoginController {
                    
                    
                    
-                   model.getAuthenticate().setLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "#" + view.getMyJFrame().getLoginScreen().getPassword().getText());
-                   model.getAuthenticate().checkLogin(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "#" + view.getMyJFrame().getLoginScreen().getPassword().getText());
+                   try {
+                       model.getAuthenticate().setLogin(model.getEncryption().encrypt(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "a" + view.getMyJFrame().getLoginScreen().getPassword().getText()));
+                   } catch (Exception ex) {
+                       System.out.println("Failed");
+                   }
+                   try {
+                       model.getAuthenticate().checkLogin(model.getEncryption().encrypt(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "a" + view.getMyJFrame().getLoginScreen().getPassword().getText()));
+                   System.out.println(model.getEncryption().encrypt(view.getMyJFrame().getLoginScreen().getUsername().getText()+ "a" + view.getMyJFrame().getLoginScreen().getPassword().getText()));
+                   } catch (Exception ex) {
+                       System.out.println("Failed");
+                   }
                    
                    if(model.getAuthenticate().getCheck()==true){
                        view.getMyJFrame().getProfileNameAccess().setProfileName(view.getMyJFrame().getLoginScreen().getUsername().getText());
