@@ -16,7 +16,6 @@ public class Main
         CreateCredentialsController createCredentialsController = new CreateCredentialsController(model, view);
         EditCategoryController editCategoryController = new EditCategoryController(model, view);
         DeleteCategoryController deleteCategoryController = new DeleteCategoryController(model, view);
-        EditCredentialController editCredentialController = new EditCredentialController(model, view);
         DeleteCredentialController deleteCredentialController = new DeleteCredentialController(model, view);
         ViewPortfolioController viewPortfolioController = new ViewPortfolioController(model, view);
     }

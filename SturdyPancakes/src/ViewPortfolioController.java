@@ -52,7 +52,7 @@ public class ViewPortfolioController implements Menu {
                        // view.getMyJFrame().getSavedPortfolios().separateLines();
                         
                         for (int i = 0; i < credentials.size(); i++) {
-                            model.getEncryption().decrypt(" "+credentials.get(i)+" ");
+                            //model.getEncryption().decrypt(" "+credentials.get(i)+" ");
                             
                             
                             String temp2 = credentials.get(i);

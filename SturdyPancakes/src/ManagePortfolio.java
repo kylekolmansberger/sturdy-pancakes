@@ -65,12 +65,7 @@ public class ManagePortfolio extends JPanel{
         createCredentialsButton.setContentAreaFilled(false);
         add(createCredentialsButton,c);
         
-        c.gridx = 1;
-        c.gridy = 4;
-        editCredentialsButton = new JButton("Edit Credentials");
-        editCredentialsButton.setOpaque(false); 
-        editCredentialsButton.setContentAreaFilled(false);
-        add(editCredentialsButton,c);
+        
         
         c.gridx = 1;
         c.gridy = 5;

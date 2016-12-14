@@ -16,7 +16,6 @@ public class MyJFrame extends JFrame
     private EditCategory editCategory;
     private DeleteCategory deleteCategory;
     private CreateCredentials createCredentials;
-    private EditCredential editCredential;
     private DeleteCredential deleteCredential;
     private ProfileNameAccess profileNameAccess;
     private SavedPortfolios savedPortfolios;
@@ -37,7 +36,6 @@ public class MyJFrame extends JFrame
         editCategory = new EditCategory();
         deleteCategory = new DeleteCategory();
         createCredentials = new CreateCredentials();
-        editCredential = new EditCredential();
         deleteCredential = new DeleteCredential();
         profileNameAccess = new ProfileNameAccess();
         savedPortfolios = new SavedPortfolios();
@@ -87,9 +85,7 @@ public class MyJFrame extends JFrame
     public CreateCredentials getCreateCredentials(){
         return createCredentials;
     }
-    public EditCredential getEditCredential() {
-        return editCredential;
-    }
+    
     public DeleteCredential getDeleteCredentials() {
         return deleteCredential;
     }
