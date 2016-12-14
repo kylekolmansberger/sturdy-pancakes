@@ -120,7 +120,7 @@ public class RegisterController {
                         System.out.println("Failed");
                     }
 
-                    model.getAuthenticate().getUsers().add(username + "#" + password);
+                    model.getAuthenticate().getUsers().add(securedInfo);
                     System.out.println(model.getAuthenticate().getUsers());
 
                     view.getMyJFrame().getRegister().getRegisterStatus().setText("Registered");
