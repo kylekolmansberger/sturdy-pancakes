@@ -53,7 +53,8 @@ public class CredentialRemover extends JPanel {
                 String temp = credentials.get(i);
                 int space = temp.indexOf("#");
                 String label = temp.substring(0, space);
-                if (label.equals(credentialName)) {
+               
+                if (label.equals(" " + credentialName)) {
                     foundLocation = i;
                     break;
                 }
