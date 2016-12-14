@@ -49,9 +49,11 @@ public class ViewPortfolioController implements Menu {
                             credentials.add(in.nextLine());
                         }
                         view.getMyJFrame().getSavedPortfolios().savePortfolio(credentials);
-                        view.getMyJFrame().getSavedPortfolios().separateLines();
+                       // view.getMyJFrame().getSavedPortfolios().separateLines();
                         
                         for (int i = 0; i < credentials.size(); i++) {
+                            model.getEncryption().decrypt(" "+credentials.get(i)+" ");
+                            
                             
                             String temp2 = credentials.get(i);
                             int space = temp2.indexOf("#");
@@ -64,7 +66,7 @@ public class ViewPortfolioController implements Menu {
                             
                             password = temp2;
                             
-                            temp = temp + "<br>Credential: "+label+"<br>Username: "+ username + "<br>Password: "+ password+ "<br>";
+                            temp = temp + "<br>Credential: "+label+"<br>Username: "+ model.getEncryption().decrypt(username)+ "<br>Password: "+ model.getEncryption().decrypt(password)+ "<br>";
                             System.out.println("<html>" + temp+ "</html>");
                             view.getMyJFrame().getViewPortfolio().getInformation().setText("<html>" + temp + "</html>");
                             
@@ -74,6 +76,8 @@ public class ViewPortfolioController implements Menu {
                         
                         
                     } catch (IOException e) {
+                        System.out.println("Failed");
+                    } catch (Exception ex) {
                         System.out.println("Failed");
                     }
                 }

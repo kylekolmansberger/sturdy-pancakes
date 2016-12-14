@@ -35,7 +35,7 @@ public class CredentialAdder extends JPanel {
 
             FileWriter fw = new FileWriter(file, true);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(credentialName + "#" + this.username + "#" + this.password);
+            bw.write(" " +credentialName + "#" + this.username + "#" + this.password);
             bw.newLine();
             bw.close();
 

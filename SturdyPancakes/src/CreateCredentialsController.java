@@ -5,6 +5,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -71,11 +73,18 @@ public class CreateCredentialsController implements Menu {
                 if (event.getSource() == view.getMyJFrame().getCreateCredentials().getCreateButton()) {
                     
                     credentialName = view.getMyJFrame().getCreateCredentials().getCredentialName().getText();
-                    username = view.getMyJFrame().getCreateCredentials().getUsername().getText();
-                    password = view.getMyJFrame().getCreateCredentials().getPassword().getText();
+                    try {
+                        username = model.getEncryption().encrypt(view.getMyJFrame().getCreateCredentials().getUsername().getText());
+                    
+                        password = model.getEncryption().encrypt(view.getMyJFrame().getCreateCredentials().getPassword().getText());
+                        
+                    } catch (Exception ex) {
+                        Logger.getLogger(CreateCredentialsController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     category = view.getMyJFrame().getCreateCredentials().getCategory().getText();
                     profileName = view.getMyJFrame().getProfileNameAccess().getProfileName();
 
+                    
                     view.getMyJFrame().getCredentialAdder().addCredential(profileName, category, credentialName, username, password);
                     view.getMyJFrame().getCreateCredentials().getCreateStatus().setText("Created");
                 }
