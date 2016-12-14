@@ -112,8 +112,13 @@ public class CreateCredentialsController implements Menu {
                 int action = event.getKeyCode();
                 if (action == event.VK_ENTER) {
                     credentialName = view.getMyJFrame().getCreateCredentials().getCredentialName().getText();
-                    username = view.getMyJFrame().getCreateCredentials().getUsername().getText();
-                    password = view.getMyJFrame().getCreateCredentials().getPassword().getText();
+                    try {
+                        username = model.getEncryption().encrypt(view.getMyJFrame().getCreateCredentials().getUsername().getText());
+                        password = model.getEncryption().encrypt(view.getMyJFrame().getCreateCredentials().getPassword().getText());
+                    } catch (Exception ex) {
+                        Logger.getLogger(CreateCredentialsController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
                     category = view.getMyJFrame().getCreateCredentials().getCategory().getText();
                     profileName = view.getMyJFrame().getProfileNameAccess().getProfileName();
 
